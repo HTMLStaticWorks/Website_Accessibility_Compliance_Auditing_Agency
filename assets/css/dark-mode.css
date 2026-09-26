@@ -290,3 +290,21 @@ body.dark-mode *:focus-visible {
     outline-color: var(--primary) !important;
 }
 
+/* Dashboard side menu (hamburger) button contrast fix in dark mode */
+body.dark-mode .hamburger-btn {
+    background: #1d211b !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .hamburger-btn i {
+    color: #ffffff !important;
+}
+
+body.dark-mode .hamburger-btn:hover {
+    background: #2a3227 !important;
+    border-color: var(--primary) !important;
+    color: #ffffff !important;
+}
+
+
