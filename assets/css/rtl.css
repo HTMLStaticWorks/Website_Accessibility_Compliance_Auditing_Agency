@@ -1,0 +1,52 @@
+body.rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+body.rtl .nav-links,
+body.rtl .nav-actions,
+body.rtl .social-links,
+body.rtl .footer-links {
+    padding: 0;
+}
+
+body.rtl .btn i {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+body.rtl .header .logo {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+body.rtl .nav-actions {
+    margin-right: 20px;
+    margin-left: 0;
+}
+
+body.rtl .footer-links a:hover {
+    padding-left: 0;
+    padding-right: 5px;
+}
+
+body.rtl .toast-container {
+    right: auto;
+    left: 20px;
+}
+
+body.rtl .toast {
+    border-left: none;
+    border-right: 4px solid var(--primary);
+    animation: slideInRTL 0.3s ease-out;
+}
+
+@keyframes slideInRTL {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+body.rtl .skip-link {
+    left: auto;
+    right: 0;
+}

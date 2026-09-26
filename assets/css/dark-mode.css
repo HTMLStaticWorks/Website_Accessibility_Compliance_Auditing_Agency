@@ -1,0 +1,235 @@
+body.dark-mode {
+    --bg-body: #131713;
+    --bg-card: #1D211B;
+    --bg-header: rgba(19, 23, 19, 0.95);
+    --bg-footer: #0D0F0C;
+    --border-color: rgba(216, 211, 197, 0.15);
+    
+    --text-main: #E5E2D9;
+    --text-heading: #F5F3EC;
+    --text-muted: #9E9A8E;
+    
+    --white: #131713;
+    --primary-light: #2A3227;
+    --black: #F5F3EC;
+    
+    background-color: #131713 !important;
+}
+
+body.dark-mode .gradient-bg {
+    background: #131713 !important;
+}
+
+body.dark-mode .glass-card {
+    background: rgba(15, 23, 42, 0.6) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode .header.scrolled {
+    background: #07090E;
+}
+
+body.dark-mode .card,
+body.dark-mode .stat-card,
+body.dark-mode .table-container,
+body.dark-mode .login-box,
+body.dark-mode .service-snapshot-card {
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background: #0F172A !important;
+}
+
+
+/* Overriding hardcoded light backgrounds across all pages - Excluding heroes with images */
+body.dark-mode .error-page,
+body.dark-mode .login-container,
+body.dark-mode.dashboard-body,
+body.dark-mode .main-dash,
+body.dark-mode .sidebar {
+    background-color: #000000 !important;
+    background-image: none !important;
+}
+
+/* Alternate sections (light grey in light mode) become dark grey in dark mode */
+body.dark-mode [style*="#f1f5f9"],
+body.dark-mode [style*="#f8fafc"],
+body.dark-mode [style*="#eee"],
+body.dark-mode [style*="#e2e8f0"] {
+    background-color: #1a1a1a !important;
+    background: #1a1a1a !important;
+}
+
+/* White backgrounds become black */
+body.dark-mode [style*="background: white"],
+body.dark-mode [style*="background-color: white"],
+body.dark-mode [style*="background: #fff"],
+body.dark-mode [style*="background-color: #fff"] {
+    background-color: #000000 !important;
+    background: #000000 !important;
+}
+
+body.dark-mode .sidebar {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .theme-toggle, 
+body.dark-mode .rtl-toggle {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+body.dark-mode .toast {
+    background: #111111;
+    color: #ffffff;
+}
+
+body.dark-mode .btn-outline {
+    border-color: #ffffff !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .btn-outline:hover {
+    background: #ffffff !important;
+    color: #000000 !important;
+}
+
+body.dark-mode .nav-link:not(.active),
+body.dark-mode .nav-item {
+    color: #ffffff !important;
+}
+
+body.dark-mode .nav-link.active {
+    color: #F43F5E !important;
+}
+
+body.dark-mode .nav-link.active::after {
+    background-color: #F43F5E;
+}
+
+body.dark-mode .logo {
+    color: #F43F5E !important;
+}
+
+body.dark-mode .logo i {
+    background: #F43F5E !important;
+    color: #ffffff !important;
+}
+
+/* Ensuring all text is white on black background, including hardcoded colors */
+body.dark-mode p,
+body.dark-mode span:not(.btn),
+body.dark-mode strong,
+body.dark-mode label,
+body.dark-mode li,
+body.dark-mode td,
+body.dark-mode th,
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3, 
+body.dark-mode h4, 
+body.dark-mode h5, 
+body.dark-mode h6,
+body.dark-mode .section-title,
+body.dark-mode .section-subtitle,
+body.dark-mode .card-title,
+body.dark-mode .card-text,
+body.dark-mode .faq-answer,
+body.dark-mode .footer-about p,
+body.dark-mode .footer-links a,
+body.dark-mode .footer-bottom,
+body.dark-mode .stat-value,
+body.dark-mode .text-muted,
+body.dark-mode [style*="color"] {
+    color: #ffffff !important;
+}
+
+
+/* Specific section overrides for background and text */
+body.dark-mode .section,
+body.dark-mode .container,
+body.dark-mode .grid {
+    color: #ffffff !important;
+}
+
+/* Table and Form inputs in dark mode */
+body.dark-mode .dash-table th {
+    background: #1a1a1a !important;
+}
+
+body.dark-mode .dash-table td {
+    border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+    background-color: #1a1a1a !important;
+    border-color: #333333 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .password-toggle i {
+    color: #ffffff !important;
+}
+
+body.dark-mode .status-badge {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .social-link {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .social-link i {
+    color: #ffffff !important;
+}
+
+body.dark-mode .footer-bottom a {
+    color: #ffffff !important;
+}
+
+/* Hardcoded background and text overrides for pills, labels, etc. */
+body.dark-mode [style*="background: white"],
+body.dark-mode [style*="background-color: white"],
+body.dark-mode [style*="background:#fff"],
+body.dark-mode [style*="background-color:#fff"] {
+    background: #333333 !important;
+    color: #ffffff !important;
+}
+
+/* Mobile Menu Dark Mode */
+body.dark-mode .nav-links {
+    background: rgba(0, 0, 0, 0.98) !important;
+    box-shadow: -15px 0 40px rgba(0,0,0,0.5);
+}
+
+body.dark-mode .nav-links .nav-link {
+    border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .nav-links .mobile-toggle-wrapper {
+    border-top-color: rgba(255, 255, 255, 0.1);
+}
+body.dark-mode #analyze-btn,
+body.dark-mode #contact-sales-btn {
+    color: #000000 !important;
+}
+
+body.dark-mode .back-to-top {
+    background: var(--primary);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(113, 128, 106, 0.4);
+}
+
+body.dark-mode .back-to-top:hover {
+    background: #ffffff;
+    color: var(--primary);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+body.dark-mode *:focus-visible {
+    outline-color: var(--primary) !important;
+}
+

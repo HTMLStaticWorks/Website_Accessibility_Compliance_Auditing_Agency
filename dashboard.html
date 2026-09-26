@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <title>Dashboard | WACAAegis Compliance Center</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-body">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <i class="fas fa-universal-access"></i>
+                <span>WACAAegis</span>
+            </div>
+            <button class="close-sidebar" id="closeSidebar"><i class="fas fa-times"></i></button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active"><i class="fas fa-th-large"></i> <span>Overview</span></a>
+            <a href="#" class="nav-item"><i class="fas fa-globe"></i> <span>My Domains</span></a>
+            <a href="#" class="nav-item"><i class="fas fa-file-alt"></i> <span>Audit Reports</span></a>
+            <a href="#" class="nav-item"><i class="fas fa-chart-pie"></i> <span>Compliance Analytics</span></a>
+            <a href="#" class="nav-item"><i class="fas fa-tasks"></i> <span>Remediation Tasks</span></a>
+            <a href="#" class="nav-item"><i class="fas fa-certificate"></i> <span>Certificates</span></a>
+
+            <div class="mobile-sidebar-controls">
+                <div class="mobile-actions">
+                    <button class="theme-toggle" title="Toggle Theme"
+                        style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: white; width: 40px; height: 40px; border-radius: 50%; cursor: pointer;">🌙</button>
+                    <button class="rtl-toggle" title="Toggle RTL/LTR"
+                        style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: white; width: 40px; height: 40px; cursor: pointer;">RTL</button>
+                </div>
+                <div class="mobile-user-profile">
+                    <div class="avatar"
+                        style="width: 40px; height: 40px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">
+                        JD</div>
+                    <div class="mobile-user-info">
+                        <div style="font-weight: 700; font-size: 14px; color: white;">John Doe</div>
+                        <div style="font-size: 12px; color: #94a3b8;">Admin Account</div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="#" class="nav-item"><i class="fas fa-cog"></i> <span>Settings</span></a>
+            <a href="#" class="nav-item"><i class="fas fa-question-circle"></i> <span>Support</span></a>
+            <a href="index.html" class="nav-item" style="color: var(--danger);"><i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span></a>
+        </div>
+    </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-dash">
+        <header class="dash-header">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <button class="hamburger-btn" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div>
+                    <h1 style="font-size: 1.5rem; margin-bottom: 5px;">Dashboard Overview</h1>
+                    <p style="font-size: 14px; color: var(--text-muted);">Welcome back, Acme Corp Team!</p>
+                </div>
+            </div>
+
+            <div class="user-profile">
+                <button class="theme-toggle" title="Toggle Theme"
+                    style="background: white; border: 1px solid var(--dash-border); width: 40px; height: 40px; border-radius: 50%;">🌙</button>
+                <button class="rtl-toggle" title="Toggle RTL/LTR">RTL</button>
+                <div style="text-align: right;">
+                    <div style="font-weight: 700; font-size: 14px;">John Doe</div>
+                    <div style="font-size: 12px; color: var(--text-muted);">Admin Account</div>
+                </div>
+                <div class="avatar">JD</div>
+            </div>
+        </header>
+
+        <!-- Dynamic Content Area -->
+        <div id="dashboard-content-area">
+            <!-- Accessibility Score Cards (4 cards) -->
+            <div class="dash-grid">
+                <div class="stat-card">
+                    <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Overall
+                        Score</span>
+                    <div class="stat-value" style="color: var(--success);">94.2%</div>
+                    <div style="height: 4px; background: #eee; border-radius: 2px;">
+                        <div style="width: 94%; height: 100%; background: var(--success); border-radius: 2px;"></div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Active
+                        Violations</span>
+                    <div class="stat-value" style="color: var(--danger);">12</div>
+                    <span style="font-size: 12px; color: var(--danger);"><i class="fas fa-arrow-down"></i> 5 since last
+                        week</span>
+                </div>
+                <div class="stat-card">
+                    <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Pages
+                        Scanned</span>
+                    <div class="stat-value">1,240</div>
+                    <span style="font-size: 12px; color: var(--text-muted);">across 3 domains</span>
+                </div>
+                <div class="stat-card">
+                    <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Compliance
+                        Level</span>
+                    <div class="stat-value" style="font-size: 1.5rem; margin: 18px 0;">WCAG 2.1 AA</div>
+                    <span style="font-size: 12px; color: var(--primary);">Targeting AAA</span>
+                </div>
+            </div>
+
+            <!-- Progress Tracker & Analytics -->
+            <div class="grid grid-2"
+                style="margin-bottom: 40px; grid-template-columns: 1.5fr 1fr; display: grid; gap: 20px;">
+                <div class="table-container" style="padding: 25px;">
+                    <h3 style="margin-bottom: 25px;">Remediation Progress</h3>
+                    <div style="display: grid; gap: 20px;">
+                        <div>
+                            <div
+                                style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 14px;">
+                                <span>Color Contrast Fixes</span>
+                                <span>80%</span>
+                            </div>
+                            <div style="height: 8px; background: #f1f5f9; border-radius: 4px;">
+                                <div style="width: 80%; height: 100%; background: var(--primary); border-radius: 4px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div
+                                style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 14px;">
+                                <span>ARIA Labeling Improvements</span>
+                                <span>45%</span>
+                            </div>
+                            <div style="height: 8px; background: #f1f5f9; border-radius: 4px;">
+                                <div style="width: 45%; height: 100%; background: var(--primary); border-radius: 4px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div
+                                style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 14px;">
+                                <span>Keyboard Traps Resolved</span>
+                                <span>100%</span>
+                            </div>
+                            <div style="height: 8px; background: #f1f5f9; border-radius: 4px;">
+                                <div style="width: 100%; height: 100%; background: var(--success); border-radius: 4px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-container" style="padding: 25px; background: var(--primary); color: white;">
+                    <h3 style="color: white; margin-bottom: 20px;">Quick VPAT Export</h3>
+                    <p style="font-size: 14px; margin-bottom: 25px; opacity: 0.9;">Generate and download your Voluntary
+                        Product Accessibility Template based on current audit data.</p>
+                    <button class="btn" style="background: white; color: var(--primary); width: 100%;"><i
+                            class="fas fa-file-download"></i> Download VPAT (PDF)</button>
+                    <button class="btn"
+                        style="background: rgba(255,255,255,0.1); color: white; width: 100%; margin-top: 10px; border: 1px solid white;">Share
+                        Report</button>
+                </div>
+            </div>
+
+            <!-- Submitted URLs Table -->
+            <div class="table-container">
+                <div
+                    style="padding: 20px; border-bottom: 1px solid var(--dash-border); display: flex; justify-content: space-between; align-items: center;">
+                    <h3 style="font-size: 1.1rem;">Recent Audit Scans</h3>
+                    <button class="btn btn-primary" style="padding: 8px 15px; font-size: 12px;">New Audit Scan</button>
+                </div>
+                <table class="dash-table">
+                    <thead>
+                        <tr>
+                            <th>URL Path</th>
+                            <th>Compliance Score</th>
+                            <th>Violations</th>
+                            <th>Last Scan</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>/home</td>
+                            <td>98%</td>
+                            <td>0</td>
+                            <td>2 hours ago</td>
+                            <td><span class="status-badge status-passed">Passed</span></td>
+                            <td><a href="#" style="color: var(--primary);">View Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>/pricing</td>
+                            <td>85%</td>
+                            <td>4</td>
+                            <td>5 hours ago</td>
+                            <td><span class="status-badge status-warning">Warning</span></td>
+                            <td><a href="#" style="color: var(--primary);">View Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>/checkout</td>
+                            <td>42%</td>
+                            <td>18</td>
+                            <td>1 day ago</td>
+                            <td><span class="status-badge status-failed">Failed</span></td>
+                            <td><a href="#" style="color: var(--primary);">View Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>/about</td>
+                            <td>95%</td>
+                            <td>1</td>
+                            <td>2 days ago</td>
+                            <td><span class="status-badge status-passed">Passed</span></td>
+                            <td><a href="#" style="color: var(--primary);">View Details</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Dashboard Navigation Logic
+        const contentArea = document.getElementById('dashboard-content-area');
+        const dashTitle = document.querySelector('.dash-header h1');
+        const dashSub = document.querySelector('.dash-header p');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const closeSidebar = document.getElementById('closeSidebar');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+        const pages = {
+            'Overview': {
+                title: 'Dashboard Overview',
+                subtitle: 'Welcome back, Acme Corp Team!',
+                content: contentArea.innerHTML
+            },
+            'My Domains': {
+                title: 'My Domains',
+                subtitle: 'Manage your monitored websites and domains',
+                content: `
+                    <div class="dash-grid">
+                        <div class="stat-card">
+                            <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Total Domains</span>
+                            <div class="stat-value">8</div>
+                            <span style="font-size: 12px; color: var(--success);"><i class="fas fa-plus"></i> 2 new this month</span>
+                        </div>
+                        <div class="stat-card">
+                            <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Monitored Pages</span>
+                            <div class="stat-value">412</div>
+                            <span style="font-size: 12px; color: var(--text-muted);">Active scans running</span>
+                        </div>
+                        <div class="stat-card">
+                            <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Critical Issues</span>
+                            <div class="stat-value" style="color: var(--danger);">14</div>
+                            <span style="font-size: 12px; color: var(--danger);">Action required</span>
+                        </div>
+                        <div class="stat-card">
+                            <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Last Scan</span>
+                            <div class="stat-value" style="font-size: 1.5rem; margin: 18px 0;">10 Mins Ago</div>
+                            <span style="font-size: 12px; color: var(--primary);">acme-corp.com</span>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <div style="padding: 20px; border-bottom: 1px solid var(--dash-border); display: flex; justify-content: space-between; align-items: center;">
+                            <h3 style="font-size: 1.1rem;">Registered Domains</h3>
+                            <button class="btn btn-primary" style="padding: 8px 15px; font-size: 12px;">Add Domain</button>
+                        </div>
+                        <table class="dash-table">
+                            <thead>
+                                <tr><th>Domain Name</th><th>Status</th><th>Violations</th><th>Score</th><th>Last Scanned</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>acme-corp.com</td><td><span class="status-badge status-passed">Active</span></td><td>3</td><td>94%</td><td>Today</td></tr>
+                                <tr><td>store.acme.com</td><td><span class="status-badge status-warning">Issues</span></td><td>12</td><td>76%</td><td>Yesterday</td></tr>
+                                <tr><td>blog.acme.com</td><td><span class="status-badge status-passed">Active</span></td><td>0</td><td>100%</td><td>2 days ago</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-container" style="padding: 25px;">
+                        <h3>Domain Alerts</h3>
+                        <p style="margin-top: 10px; color: var(--text-muted);">Set up custom notifications for accessibility regressions on your domains.</p>
+                        <button class="btn btn-outline" style="margin-top: 15px; border: 1px solid var(--dash-border);">Configure Alerts</button>
+                    </div>
+                `
+            },
+            'Audit Reports': {
+                title: 'Audit Reports',
+                subtitle: 'Detailed accessibility audit documentation',
+                content: `
+                    <div class="dash-grid">
+                        <div class="stat-card">
+                            <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Total Reports</span>
+                            <div class="stat-value">24</div>
+                        </div>
+                        <div class="stat-card">
+                            <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Passed Audits</span>
+                            <div class="stat-value" style="color: var(--success);">18</div>
+                        </div>
+                        <div class="stat-card">
+                            <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Failed Audits</span>
+                            <div class="stat-value" style="color: var(--danger);">6</div>
+                        </div>
+                        <div class="stat-card">
+                            <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Pending Review</span>
+                            <div class="stat-value">2</div>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <div style="padding: 20px; border-bottom: 1px solid var(--dash-border);">
+                            <h3 style="font-size: 1.1rem;">Latest Generated Reports</h3>
+                        </div>
+                        <table class="dash-table">
+                            <thead>
+                                <tr><th>Report Name</th><th>Date</th><th>Compliance</th><th>Format</th><th>Action</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Q2 Main Site Audit</td><td>May 05, 2026</td><td>WCAG 2.1 AA</td><td>PDF</td><td><a href="#">Download</a></td></tr>
+                                <tr><td>Checkout Flow Scan</td><td>May 01, 2026</td><td>WCAG 2.1 A</td><td>JSON</td><td><a href="#">Download</a></td></tr>
+                                <tr><td>Mobile App Initial</td><td>April 22, 2026</td><td>WCAG 2.1 AA</td><td>PDF</td><td><a href="#">Download</a></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-container" style="padding: 25px; background: #f8fafc;">
+                        <h3>Schedule New Report</h3>
+                        <p style="margin-bottom: 20px;">Automatically generate and email reports to your team weekly or monthly.</p>
+                        <button class="btn btn-primary">Setup Schedule</button>
+                    </div>
+                `
+            },
+            'Compliance Analytics': {
+                title: 'Compliance Analytics',
+                subtitle: 'Visualize your accessibility data and trends',
+                content: `
+                    <div class="dash-grid">
+                        <div class="stat-card">
+                            <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Avg Score</span>
+                            <div class="stat-value">88%</div>
+                        </div>
+                        <div class="stat-card">
+                            <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Trend</span>
+                            <div class="stat-value" style="color: var(--success);">+4.2%</div>
+                        </div>
+                        <div class="stat-card">
+                            <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Top Violation</span>
+                            <div class="stat-value" style="font-size: 1.2rem; margin: 25px 0;">Contrast Ratio</div>
+                        </div>
+                        <div class="stat-card">
+                            <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Pages Fixed</span>
+                            <div class="stat-value">84</div>
+                        </div>
+                    </div>
+                    <div class="grid grid-2" style="margin-bottom: 40px; gap: 25px;">
+                        <div class="stat-card" style="height: 300px; display: flex; align-items: center; justify-content: center; background: #fafafa; padding: 25px;">
+                            <div style="text-align: center; color: #ccc;">
+                                <i class="fas fa-chart-line fa-3x"></i>
+                                <p style="margin-top: 10px;">Compliance Trend Chart Placeholder</p>
+                            </div>
+                        </div>
+                        <div class="stat-card" style="padding: 25px;">
+                            <h3 style="margin-bottom: 20px;">Issue Breakdown</h3>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 15px; display: flex; justify-content: space-between;"><span>Images (Alt text)</span><strong>45%</strong></li>
+                                <li style="margin-bottom: 15px; display: flex; justify-content: space-between;"><span>Navigation</span><strong>25%</strong></li>
+                                <li style="margin-bottom: 15px; display: flex; justify-content: space-between;"><span>Forms</span><strong>15%</strong></li>
+                                <li style="margin-bottom: 15px; display: flex; justify-content: space-between;"><span>Others</span><strong>15%</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="table-container" style="padding: 25px;">
+                        <h3>Filter Analytics</h3>
+                        <div style="display: flex; gap: 10px; margin-top: 15px;">
+                            <select style="padding: 8px; border-radius: 5px; border: 1px solid #ddd;"><option>Last 30 Days</option></select>
+                            <select style="padding: 8px; border-radius: 5px; border: 1px solid #ddd;"><option>All Domains</option></select>
+                            <button class="btn btn-primary">Apply Filters</button>
+                        </div>
+                    </div>
+                `
+            },
+            'Remediation Tasks': {
+                title: 'Remediation Tasks',
+                subtitle: 'Assigned accessibility fixes and tasks',
+                content: `
+                    <div class="dash-grid">
+                        <div class="stat-card">
+                            <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Total Tasks</span>
+                            <div class="stat-value">32</div>
+                        </div>
+                        <div class="stat-card">
+                            <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">High Priority</span>
+                            <div class="stat-value" style="color: var(--danger);">8</div>
+                        </div>
+                        <div class="stat-card">
+                            <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">In Progress</span>
+                            <div class="stat-value" style="color: var(--primary);">12</div>
+                        </div>
+                        <div class="stat-card">
+                            <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Completed</span>
+                            <div class="stat-value" style="color: var(--success);">12</div>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <div style="padding: 20px; border-bottom: 1px solid var(--dash-border); display: flex; justify-content: space-between;">
+                            <h3 style="font-size: 1.1rem;">Fix Backlog</h3>
+                            <button class="btn btn-primary" style="padding: 8px 15px; font-size: 12px;">Create Task</button>
+                        </div>
+                        <table class="dash-table">
+                            <thead>
+                                <tr><th>Task</th><th>Priority</th><th>Assignee</th><th>Status</th><th>Due</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Fix contrast on Footer</td><td><span class="status-badge status-failed">High</span></td><td>JD</td><td>In Progress</td><td>Tomorrow</td></tr>
+                                <tr><td>Add ARIA to Menu</td><td><span class="status-badge status-warning">Med</span></td><td>AS</td><td>Open</td><td>May 15</td></tr>
+                                <tr><td>Update Alt texts</td><td><span class="status-badge status-passed">Low</span></td><td>JD</td><td>Completed</td><td>Today</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-container" style="padding: 25px;">
+                        <h3>Team Integration</h3>
+                        <p style="margin-top: 10px;">Sync tasks with Jira, Trello or GitHub Issues.</p>
+                        <button class="btn btn-outline" style="margin-top: 15px; border: 1px solid var(--dash-border);">Manage Integrations</button>
+                    </div>
+                `
+            },
+            'Certificates': {
+                title: 'Accessibility Certificates',
+                subtitle: 'Verify and manage your compliance certifications',
+                content: `
+                    <div class="dash-grid">
+                        <div class="stat-card">
+                            <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Active Certs</span>
+                            <div class="stat-value">3</div>
+                        </div>
+                        <div class="stat-card">
+                            <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Expiring Soon</span>
+                            <div class="stat-value" style="color: var(--warning);">1</div>
+                        </div>
+                        <div class="stat-card">
+                            <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Verification Rate</span>
+                            <div class="stat-value">100%</div>
+                        </div>
+                        <div class="stat-card">
+                            <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Badge Views</span>
+                            <div class="stat-value">1.2k</div>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <div style="padding: 20px; border-bottom: 1px solid var(--dash-border);">
+                            <h3 style="font-size: 1.1rem;">Issued Certificates</h3>
+                        </div>
+                        <table class="dash-table">
+                            <thead>
+                                <tr><th>Domain</th><th>Level</th><th>Issued Date</th><th>Expiry</th><th>Status</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>acme-corp.com</td><td>WCAG 2.1 AA</td><td>Jan 2026</td><td>Jan 2027</td><td><span class="status-badge status-passed">Valid</span></td></tr>
+                                <tr><td>blog.acme.com</td><td>WCAG 2.1 AAA</td><td>Mar 2026</td><td>Mar 2027</td><td><span class="status-badge status-passed">Valid</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-container" style="padding: 25px; background: linear-gradient(135deg, var(--primary), #4f46e5); color: white;">
+                        <h3 style="color: white;">Request New Certification</h3>
+                        <p style="margin: 15px 0; opacity: 0.9;">Ready for your next compliance level? Start the verification process now.</p>
+                        <button class="btn" style="background: white; color: var(--primary);">Start Verification</button>
+                    </div>
+                `
+            }
+        };
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('active');
+            sidebarOverlay.classList.toggle('active');
+            if (sidebar.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
+
+        if (sidebarToggle) sidebarToggle.addEventListener('click', toggleSidebar);
+        if (closeSidebar) closeSidebar.addEventListener('click', toggleSidebar);
+        if (sidebarOverlay) sidebarOverlay.addEventListener('click', toggleSidebar);
+
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function (e) {
+                const pageNameSpan = this.querySelector('span');
+                if (!pageNameSpan) return;
+
+                const pageName = pageNameSpan.innerText.trim();
+
+                if (pages[pageName]) {
+                    e.preventDefault();
+
+                    // Update Active State
+                    document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Update Content
+                    dashTitle.innerText = pages[pageName].title;
+                    dashSub.innerText = pages[pageName].subtitle;
+                    contentArea.innerHTML = pages[pageName].content;
+
+                    // Close sidebar on mobile after clicking
+                    if (window.innerWidth <= 1024) {
+                        sidebar.classList.remove('active');
+                        sidebarOverlay.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+
+                    // Scroll to top of content
+                    window.scrollTo(0, 0);
+                }
+            });
+        });
+    </script>
+
+    <button id="back-to-top" class="back-to-top" title="Back to Top" aria-label="Back to Top"><i class="fas fa-arrow-up"></i></button>
+</body>
+
+</html>
+
+
+

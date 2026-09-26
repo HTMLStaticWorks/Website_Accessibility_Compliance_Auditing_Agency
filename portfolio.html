@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <title>Portfolio | Accessibility Case Studies & Audit Results</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo"><i class="fas fa-universal-access"></i><span>WACAAegis</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="home-2.html" class="nav-link">Home 2</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
+
+                    <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li class="mobile-login">
+                        <a href="login.html" class="btn btn-outline" style="padding: 8px 15px; width: 100%; text-align: center;">Login</a>
+                    </li>
+                    <li class="mobile-toggle-wrapper">
+                        <button class="theme-toggle" title="Toggle Theme">🌙</button>
+                        <button class="rtl-toggle" title="Toggle RTL/LTR">RTL</button>
+                    </li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="theme-toggle" title="Toggle Theme">🌙</button>
+                    <button class="rtl-toggle" title="Toggle RTL/LTR">RTL</button>
+                    <a href="login.html" class="btn btn-outline" style="padding: 8px 15px;">Login</a>
+                    <div class="hamburger"><span></span><span></span><span></span></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Section 1: Portfolio Hero -->
+        <section class="section"
+            style="padding: 220px 0 140px; background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('assets/images/portfolio-hero.png') center/cover no-repeat; color: white; text-align: center;">
+            <div class="container" data-reveal>
+                <span class="section-subtitle" style="color: #DCE4D5;">CASE EVALUATIONS</span>
+                <h1 class="section-title hero-title" style="color: white; font-size: 3.8rem; margin-bottom: 25px;">Verified Audit Case Studies</h1>
+                <p style="max-width: 800px; margin: 0 auto; color: #cbd5e1; font-size: 1.2rem; line-height: 1.6;">
+                    Documented WCAG auditing outcomes, remediation workflows, and verification results across enterprise SaaS platforms, e-commerce, and public digital systems.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 2: Featured Accessibility Projects (4 cards) -->
+        <section class="section">
+            <div class="container">
+                <div class="grid grid-4">
+                    <div class="card" data-reveal>
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Project 1" class="card-img">
+                        <div class="card-content">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span style="font-size: 12px; color: var(--primary); font-weight: 700;">WCAG 2.1 Audit</span>
+                                <span style="font-size: 12px; background: var(--success); color: white; padding: 2px 8px; border-radius: 10px;">Score: 98%</span>
+                            </div>
+                            <h3 class="card-title">FinTech Analytics Platform</h3>
+                            <p class="card-text">Comprehensive WCAG 2.1 AA audit for an institutional financial analytics application.</p>
+                            <div style="font-size: 12px; color: var(--text-muted); margin-top: 10px;">
+                                <i class="fas fa-tools"></i> Tools: NVDA, axe-core, JAWS
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary" style="width: 100%;">View Case Study</a>
+                        </div>
+                    </div>
+                    <div class="card" data-reveal>
+                        <img src="https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Project 2" class="card-img">
+                        <div class="card-content">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span style="font-size: 12px; color: var(--primary); font-weight: 700;">Remediation</span>
+                                <span style="font-size: 12px; background: var(--success); color: white; padding: 2px 8px; border-radius: 10px;">Score: 95%</span>
+                            </div>
+                            <h3 class="card-title">Global E-Commerce Checkout</h3>
+                            <p class="card-text">Checkout flow accessibility remediation and screen reader optimization for online retail.</p>
+                            <div style="font-size: 12px; color: var(--text-muted); margin-top: 10px;">
+                                <i class="fas fa-tools"></i> Tools: VoiceOver, Lighthouse
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary" style="width: 100%;">View Case Study</a>
+                        </div>
+                    </div>
+                    <div class="card" data-reveal>
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Project 3" class="card-img">
+                        <div class="card-content">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span style="font-size: 12px; color: var(--primary); font-weight: 700;">VPAT Report</span>
+                                <span style="font-size: 12px; background: var(--success); color: white; padding: 2px 8px; border-radius: 10px;">Score: 100%</span>
+                            </div>
+                            <h3 class="card-title">GovConnect Digital Portal</h3>
+                            <p class="card-text">Section 508 compliance verification and VPAT report generation for state digital services.</p>
+                            <div style="font-size: 12px; color: var(--text-muted); margin-top: 10px;">
+                                <i class="fas fa-tools"></i> Tools: Manual Testing, WAVE
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary" style="width: 100%;">View Case Study</a>
+                        </div>
+                    </div>
+                    <div class="card" data-reveal>
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Project 4" class="card-img">
+                        <div class="card-content">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span style="font-size: 12px; color: var(--primary); font-weight: 700;">UX Consulting</span>
+                                <span style="font-size: 12px; background: var(--success); color: white; padding: 2px 8px; border-radius: 10px;">Score: 99%</span>
+                            </div>
+                            <h3 class="card-title">HealthTech Telehealth App</h3>
+                            <p class="card-text">iOS VoiceOver and Android TalkBack interaction evaluation for a mobile telehealth platform.</p>
+                            <div style="font-size: 12px; color: var(--text-muted); margin-top: 10px;">
+                                <i class="fas fa-tools"></i> Tools: iOS VoiceOver, Android TalkBack
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary" style="width: 100%;">View Case Study</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Accessibility Audit Workflow -->
+        <section class="section" style="background: #f1f5f9;">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 60px;">
+                    <h2 class="section-title">Audit & Verification Workflow</h2>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 20px; max-width: 800px; margin: 0 auto;">
+                    <div style="background: white; padding: 30px; border-radius: 15px; display: flex; gap: 20px; align-items: center;" data-reveal>
+                        <div style="width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 800;">1</div>
+                        <div>
+                            <h4>Scope Mapping & Scan</h4>
+                            <p style="font-size: 14px; color: var(--text-muted);">Mapping application user paths and establishing test scope across core dynamic views.</p>
+                        </div>
+                    </div>
+                    <div style="background: white; padding: 30px; border-radius: 15px; display: flex; gap: 20px; align-items: center;" data-reveal>
+                        <div style="width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 800;">2</div>
+                        <div>
+                            <h4>Technical & AT Testing</h4>
+                            <p style="font-size: 14px; color: var(--text-muted);">Executing manual keyboard, screen reader, and contrast audits across custom UI components.</p>
+                        </div>
+                    </div>
+                    <div style="background: white; padding: 30px; border-radius: 15px; display: flex; gap: 20px; align-items: center;" data-reveal>
+                        <div style="width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 800;">3</div>
+                        <div>
+                            <h4>Code Remediation Support</h4>
+                            <p style="font-size: 14px; color: var(--text-muted);">Delivering direct DOM remediation code snippets and re-evaluating resolved criteria.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Compliance Metrics & Results -->
+        <section class="section">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 60px;">
+                    <h2 class="section-title">Measured Compliance Outcomes</h2>
+                </div>
+                <div class="grid grid-2">
+                    <div data-reveal style="padding: 40px; background: #0f172a; color: white; border-radius: 20px;">
+                        <h3 style="color: white; margin-bottom: 30px;">WCAG Conformance Index</h3>
+                        <div style="margin-bottom: 30px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span>Before Audit</span>
+                                <span>42%</span>
+                            </div>
+                            <div style="width: 100%; height: 12px; background: rgba(255,255,255,0.1); border-radius: 6px;">
+                                <div style="width: 42%; height: 100%; background: var(--danger); border-radius: 6px;"></div>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 30px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span>After Remediation</span>
+                                <span>98%</span>
+                            </div>
+                            <div style="width: 100%; height: 12px; background: rgba(255,255,255,0.1); border-radius: 6px;">
+                                <div style="width: 98%; height: 100%; background: var(--success); border-radius: 6px;"></div>
+                            </div>
+                        </div>
+                        <p style="color: #94a3b8; font-size: 14px;">Average improvement across 150+ enterprise audit evaluations.</p>
+                    </div>
+                    <div data-reveal style="display: flex; align-items: center; justify-content: center;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 5rem; font-weight: 800; color: var(--primary);">+135%</div>
+                            <p style="font-size: 1.2rem; font-weight: 600;">Assistive Interaction Rate</p>
+                            <p style="color: var(--text-muted); margin-top: 10px;">Applications experienced significant improvements in screen reader completion rates post-remediation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Client Testimonials (4 cards) + CTA -->
+        <section class="section" style="background: #f8fafc;">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 60px;">
+                    <h2 class="section-title">Engineering & Leadership Feedback</h2>
+                </div>
+                <div class="grid grid-4" style="margin-bottom: 60px;">
+                    <div class="card" data-reveal style="padding: 30px; position: relative;">
+                        <i class="fas fa-quote-left" style="position: absolute; top: 20px; right: 20px; font-size: 2rem; color: rgba(37, 99, 235, 0.05);"></i>
+                        <p class="card-text" style="font-style: italic; position: relative; z-index: 1;">"The audit findings were remarkably precise. WACAAegis revealed DOM accessibility defects that our automated suite completely missed."</p>
+                        <div style="display: flex; align-items: center; gap: 15px; margin-top: 20px;">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Sarah J." style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; object-position: center top; flex-shrink: 0;">
+                            <div>
+                                <h4 style="font-size: 14px; margin: 0;">Sarah Jenkins</h4>
+                                <span style="font-size: 12px; color: var(--text-muted);">CTO, FinTech Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-reveal style="padding: 30px; position: relative;">
+                        <i class="fas fa-quote-left" style="position: absolute; top: 20px; right: 20px; font-size: 2rem; color: rgba(37, 99, 235, 0.05);"></i>
+                        <p class="card-text" style="font-style: italic; position: relative; z-index: 1;">"The direct code remediation guidance saved our engineering team weeks of trial and error during sprint cycles."</p>
+                        <div style="display: flex; align-items: center; gap: 15px; margin-top: 20px;">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="David L." style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; object-position: center top; flex-shrink: 0;">
+                            <div>
+                                <h4 style="font-size: 14px; margin: 0;">David Lawson</h4>
+                                <span style="font-size: 12px; color: var(--text-muted);">Lead Dev, Global E-Com</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-reveal style="padding: 30px; position: relative;">
+                        <i class="fas fa-quote-left" style="position: absolute; top: 20px; right: 20px; font-size: 2rem; color: rgba(37, 99, 235, 0.05);"></i>
+                        <p class="card-text" style="font-style: italic; position: relative; z-index: 1;">"WACAAegis provided complete Section 508 verification and VPAT documentation essential for our enterprise compliance."</p>
+                        <div style="display: flex; align-items: center; gap: 15px; margin-top: 20px;">
+                            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Elena M." style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; object-position: center top; flex-shrink: 0;">
+                            <div>
+                                <h4 style="font-size: 14px; margin: 0;">Elena Martinez</h4>
+                                <span style="font-size: 12px; color: var(--text-muted); white-space: nowrap;">Product Lead, GovConnect</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-reveal style="padding: 30px; position: relative;">
+                        <i class="fas fa-quote-left" style="position: absolute; top: 20px; right: 20px; font-size: 2rem; color: rgba(37, 99, 235, 0.05);"></i>
+                        <p class="card-text" style="font-style: italic; position: relative; z-index: 1;">"Their technical insights into focus management and keyboard routing transformed how we architect front-end components."</p>
+                        <div style="display: flex; align-items: center; gap: 15px; margin-top: 20px;">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="James K." style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; object-position: center top; flex-shrink: 0;">
+                            <div>
+                                <h4 style="font-size: 14px; margin: 0;">James Knight</h4>
+                                <span style="font-size: 12px; color: var(--text-muted);">UX Lead, HealthTech</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="logo" style="margin-bottom: 25px;">
+                        <i class="fas fa-universal-access"></i>
+                        <span>WACAAegis</span>
+                    </a>
+                    <p>Dedicated to making the web accessible for everyone. I provide enterprise-level accessibility
+                        audits and remediation guidance.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services-details.html">WCAG Audits</a></li>
+                        <li><a href="services-details.html">ADA Compliance</a></li>
+                        <li><a href="services-details.html">VPAT Reports</a></li>
+                        <li><a href="services-details.html">Remediation</a></li>
+                        <li><a href="services-details.html">UX Consulting</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Newsletter</h4>
+                    <p style="color: #94a3b8; font-size: 14px; margin-bottom: 20px;">Subscribe to get the latest
+                        accessibility updates.</p>
+                    <form style="display: flex; gap: 5px;">
+                        <input type="email" placeholder="Email Address"
+                            style="padding: 10px; border-radius: var(--radius-sm); flex-grow: 1; background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255,255,255,0.1);"
+                            required id="footer-email">
+                        <button type="submit" class="btn btn-primary" style="padding: 10px;"><i
+                                class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 WACAAegis. All rights reserved. | <a href="coming-soon.html">Privacy Policy</a> | <a
+                        href="coming-soon.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/accessibility.js"></script>
+
+    <button id="back-to-top" class="back-to-top" title="Back to Top" aria-label="Back to Top"><i class="fas fa-arrow-up"></i></button>
+</body>
+</html>
+
+
+

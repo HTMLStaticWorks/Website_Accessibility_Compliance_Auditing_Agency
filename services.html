@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <title>Services | WCAG Auditing & Accessibility Consulting</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo"><i class="fas fa-universal-access"></i><span>WACAAegis</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="home-2.html" class="nav-link">Home 2</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link active">Services</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+
+                    <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li class="mobile-login">
+                        <a href="login.html" class="btn btn-outline" style="padding: 8px 15px; width: 100%; text-align: center;">Login</a>
+                    </li>
+                    <li class="mobile-toggle-wrapper">
+                        <button class="theme-toggle" title="Toggle Theme">🌙</button>
+                        <button class="rtl-toggle" title="Toggle RTL/LTR">RTL</button>
+                    </li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="theme-toggle" title="Toggle Theme">🌙</button>
+                    <button class="rtl-toggle" title="Toggle RTL/LTR">RTL</button>
+                    <a href="login.html" class="btn btn-outline" style="padding: 8px 15px;">Login</a>
+                    <div class="hamburger"><span></span><span></span><span></span></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Section 1: Services Hero -->
+        <section class="section"
+            style="padding: 220px 0 140px; background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('assets/images/services-hero.png') center/cover no-repeat; color: white; text-align: center;">
+            <div class="container" data-reveal>
+                <span class="section-subtitle" style="color: #DCE4D5;">TECHNICAL AUDIT SERVICES</span>
+                <h1 class="section-title hero-title" style="color: white; font-size: 3.8rem; margin-bottom: 25px;">What We Audit & Verify</h1>
+                <p style="max-width: 800px; margin: 0 auto; color: #cbd5e1; font-size: 1.25rem; line-height: 1.7;">
+                    Comprehensive evaluation services tailored for enterprise web platforms, mobile software, and digital documents—delivering exact WCAG 2.1 AA compliance findings and clear remediation paths.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 2: WCAG Audit Services (4 cards) -->
+        <section class="section">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 60px;">
+                    <h2 class="section-title">Core Audit Offerings</h2>
+                </div>
+                <div class="grid grid-4">
+                    <div class="glass-card" style="padding: 0; border-radius: 20px; transition: 0.5s; overflow: hidden; background: white; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; height: 100%;" data-reveal>
+                        <img src="assets/images/service-audit-1.png" alt="Technical Audit" style="width: 100%; height: 170px; object-fit: cover;">
+                        <div style="padding: 30px; display: flex; flex-direction: column; flex-grow: 1;">
+                            <h3 class="card-title">DOM & Code Structure Audit</h3>
+                            <p class="card-text">A deep evaluation of semantic HTML markup, ARIA dynamic properties, and keyboard focus routing.</p>
+                            <div class="card-footer" style="margin-top: auto; padding-top: 20px;"><a href="services-details.html?service=technical" class="btn btn-outline" style="width:100%">Details</a></div>
+                        </div>
+                    </div>
+                    <div class="glass-card" style="padding: 0; border-radius: 20px; transition: 0.5s; overflow: hidden; background: white; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; height: 100%;" data-reveal>
+                        <img src="assets/images/service-audit-2.png" alt="Content Audit" style="width: 100%; height: 170px; object-fit: cover;">
+                        <div style="padding: 30px; display: flex; flex-direction: column; flex-grow: 1;">
+                            <h3 class="card-title">Content & Media Review</h3>
+                            <p class="card-text">Evaluating text contrast, non-text alternative text, media captions, and semantic document hierarchy.</p>
+                            <div class="card-footer" style="margin-top: auto; padding-top: 20px;"><a href="services-details.html?service=content" class="btn btn-outline" style="width:100%">Details</a></div>
+                        </div>
+                    </div>
+                    <div class="glass-card" style="padding: 0; border-radius: 20px; transition: 0.5s; overflow: hidden; background: white; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; height: 100%;" data-reveal>
+                        <img src="assets/images/service-audit-3.png" alt="Mobile App Audit" style="width: 100%; height: 170px; object-fit: cover;">
+                        <div style="padding: 30px; display: flex; flex-direction: column; flex-grow: 1;">
+                            <h3 class="card-title">Mobile Application Audit</h3>
+                            <p class="card-text">Hands-on accessibility testing for iOS and Android native apps using VoiceOver and TalkBack screen readers.</p>
+                            <div class="card-footer" style="margin-top: auto; padding-top: 20px;"><a href="services-details.html?service=mobile" class="btn btn-outline" style="width:100%">Details</a></div>
+                        </div>
+                    </div>
+                    <div class="glass-card" style="padding: 0; border-radius: 20px; transition: 0.5s; overflow: hidden; background: white; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; height: 100%;" data-reveal>
+                        <img src="assets/images/service-audit-4.png" alt="PDF/Doc Audit" style="width: 100%; height: 170px; object-fit: cover;">
+                        <div style="padding: 30px; display: flex; flex-direction: column; flex-grow: 1;">
+                            <h3 class="card-title">Digital Document Review</h3>
+                            <p class="card-text">Verifying downloadable assets, PDFs, and internal documents against PDF/UA accessibility standards.</p>
+                            <div class="card-footer" style="margin-top: auto; padding-top: 20px;"><a href="services-details.html?service=pdf" class="btn btn-outline" style="width:100%">Details</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Accessibility Testing Methods -->
+        <section class="section" style="background: #f8fafc;">
+            <div class="container">
+                <div class="grid grid-2" style="align-items: center;">
+                    <div data-reveal>
+                        <h2 class="section-title">Testing Methodology</h2>
+                        <p style="margin-bottom: 25px;">We combine automated DOM analysis with rigorous manual assistive technology evaluation.</p>
+                        <div style="display: grid; gap: 20px;">
+                            <div style="display: flex; gap: 15px;">
+                                <div style="font-size: 20px; color: var(--primary);"><i class="fas fa-robot"></i></div>
+                                <div>
+                                    <h4>Automated DOM Analysis</h4>
+                                    <p style="font-size: 14px;">Broad-spectrum structural and color contrast automated checks.</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 15px;">
+                                <div style="font-size: 20px; color: var(--primary);"><i class="fas fa-hand-pointer"></i></div>
+                                <div>
+                                    <h4>Keyboard Focus Routing</h4>
+                                    <p style="font-size: 14px;">Evaluating all interactive controls using keyboard-only navigation.</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 15px;">
+                                <div style="font-size: 20px; color: var(--primary);"><i class="fas fa-volume-up"></i></div>
+                                <div>
+                                    <h4>Assistive Technology Protocol</h4>
+                                    <p style="font-size: 14px;">Verifying full user journeys using NVDA, VoiceOver, and JAWS.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-reveal>
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Testing methods" style="border-radius: 20px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Compliance Packages (4 cards) -->
+        <section class="section">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 60px;">
+                    <h2 class="section-title">Audit Scope Tiers</h2>
+                </div>
+                <div class="grid grid-4">
+                    <div class="glass-card text-center"
+                        style="padding: 0; border-radius: 20px; transition: 0.5s; overflow: hidden; background: white; box-shadow: var(--shadow-sm);"
+                        data-reveal>
+                        <img src="assets/images/package-1.png" alt="Starter Audit"
+                            style="width: 100%; height: 170px; object-fit: cover;">
+                        <div style="padding: 30px;">
+                            <h3>Core Web Audit</h3>
+                            <p class="card-text">Ideal for marketing sites and focused landing page user flows.</p>
+                            <div class="card-footer" style="margin-top: 20px;"><a href="pricing.html" class="btn btn-primary"
+                                     style="width:100%">View Pricing</a></div>
+                        </div>
+                    </div>
+                    <div class="glass-card text-center"
+                        style="padding: 0; border-radius: 20px; transition: 0.5s; overflow: hidden; background: white; box-shadow: var(--shadow-sm);"
+                        data-reveal>
+                        <img src="assets/images/package-2.png" alt="Standard AA"
+                            style="width: 100%; height: 170px; object-fit: cover;">
+                        <div style="padding: 30px;">
+                            <h3>Full WCAG AA Review</h3>
+                            <p class="card-text">Comprehensive audit covering core web application features and complex flows.</p>
+                            <div class="card-footer" style="margin-top: 20px;"><a href="pricing.html" class="btn btn-primary"
+                                     style="width:100%">View Pricing</a></div>
+                        </div>
+                    </div>
+                    <div class="glass-card text-center"
+                        style="padding: 0; border-radius: 20px; transition: 0.5s; overflow: hidden; background: white; box-shadow: var(--shadow-sm);"
+                        data-reveal>
+                        <img src="assets/images/package-3.png" alt="Enterprise PRO"
+                            style="width: 100%; height: 170px; object-fit: cover;">
+                        <div style="padding: 30px;">
+                            <h3>Enterprise Conformance</h3>
+                            <p class="card-text">Continuous monitoring, VPAT document creation, and direct engineering support.</p>
+                            <div class="card-footer" style="margin-top: 20px;"><a href="pricing.html" class="btn btn-primary"
+                                     style="width:100%">View Pricing</a></div>
+                        </div>
+                    </div>
+                    <div class="glass-card text-center"
+                        style="padding: 0; border-radius: 20px; transition: 0.5s; overflow: hidden; background: white; box-shadow: var(--shadow-sm);"
+                        data-reveal>
+                        <img src="assets/images/package-4.png" alt="Gov/Edu Pack"
+                            style="width: 100%; height: 170px; object-fit: cover;">
+                        <div style="padding: 30px;">
+                            <h3>Regulatory Frameworks</h3>
+                            <p class="card-text">Specialized audit tailored for Section 508, EN 301 549, and EAA mandates.</p>
+                            <div class="card-footer" style="margin-top: 20px;"><a href="pricing.html" class="btn btn-primary"
+                                     style="width:100%">View Pricing</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Accessibility Roadmap CTA -->
+        <section class="section" style="background: #0f172a; color: white;">
+            <div class="container text-center">
+                <div data-reveal>
+                    <h2 class="section-title" style="color: white; -webkit-fill-color: white;">Need Guidance on Audit Scope?</h2>
+                    <p style="margin: 20px 0 40px; color: #94a3b8;">Schedule a technical consultation to establish your compliance scope and evaluation timeline.</p>
+                    <a href="contact.html" class="btn btn-primary" style="padding: 15px 50px; font-size: 1.1rem;">Request Technical Review</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="logo" style="margin-bottom: 25px;">
+                        <i class="fas fa-universal-access"></i>
+                        <span>WACAAegis</span>
+                    </a>
+                    <p>Dedicated to making the web accessible for everyone. I provide enterprise-level accessibility
+                        audits and remediation guidance.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services-details.html">WCAG Audits</a></li>
+                        <li><a href="services-details.html">ADA Compliance</a></li>
+                        <li><a href="services-details.html">VPAT Reports</a></li>
+                        <li><a href="services-details.html">Remediation</a></li>
+                        <li><a href="services-details.html">UX Consulting</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Newsletter</h4>
+                    <p style="color: #94a3b8; font-size: 14px; margin-bottom: 20px;">Subscribe to get the latest
+                        accessibility updates.</p>
+                    <form style="display: flex; gap: 5px;">
+                        <input type="email" placeholder="Email Address"
+                            style="padding: 10px; border-radius: var(--radius-sm); flex-grow: 1; background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255,255,255,0.1);"
+                            required id="footer-email">
+                        <button type="submit" class="btn btn-primary" style="padding: 10px;"><i
+                                class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 WACAAegis. All rights reserved. | <a href="coming-soon.html">Privacy Policy</a> | <a
+                        href="coming-soon.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/accessibility.js"></script>
+
+    <button id="back-to-top" class="back-to-top" title="Back to Top" aria-label="Back to Top"><i class="fas fa-arrow-up"></i></button>
+</body>
+</html>
+
+
+

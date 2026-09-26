@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <title>Freelance Web Accessibility Auditor | WCAG Compliance Specialist</title>
+    <meta name="description"
+        content="Expert WCAG 2.1 AA accessibility audits, ADA compliance reviews, and inclusive UX consulting for enterprise businesses.">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-universal-access"></i>
+                    <span>WACAAegis</span>
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="home-2.html" class="nav-link">Home 2</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+
+                    <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li class="mobile-login">
+                        <a href="login.html" class="btn btn-outline"
+                            style="padding: 8px 15px; width: 100%; text-align: center;">Login</a>
+                    </li>
+                    <li class="mobile-toggle-wrapper">
+                        <button class="theme-toggle" title="Toggle Theme">🌙</button>
+                        <button class="rtl-toggle" title="Toggle RTL/LTR">RTL</button>
+                    </li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="theme-toggle" title="Toggle Theme">🌙</button>
+                    <button class="rtl-toggle" title="Toggle RTL/LTR">RTL</button>
+                    <a href="login.html" class="btn btn-outline" style="padding: 8px 15px;">Login</a>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Section 1: Hero -->
+        <section class="section hero"
+            style="min-height: 100vh; padding: 80px 0 0; display: flex; align-items: center; background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; text-align: center; color: white;">
+            <div class="container">
+                <div data-reveal style="max-width: 900px; margin: 0 auto;">
+                    <span class="section-subtitle" style="color: #DCE4D5;">ACCESSIBILITY AUDITING PRACTICE</span>
+                    <h1 class="section-title hero-title" style="font-size: 3.5rem; margin-bottom: 25px; color: white;">
+                        Find what prevents people from using your website.</h1>
+                    <p style="font-size: 1.2rem; margin-bottom: 40px; color: #cbd5e1; line-height: 1.6;">
+                        Practical accessibility audits, manual testing, and remediation guidance that turn WCAG findings
+                        into clear, actionable code fixes for your engineering team.
+                    </p>
+                    <div class="hero-btns"
+                        style="display: flex; gap: 20px; justify-content: center; margin-bottom: 50px;">
+                        <a href="services.html" class="btn btn-primary" style="padding: 15px 40px;">Explore Solutions <i
+                                class="fas fa-arrow-right" style="margin-left: 10px;"></i></a>
+                        <a href="contact.html" class="btn btn-outline"
+                            style="padding: 15px 40px; background: rgba(255,255,255,0.1); border-color: white; color: white;">Discuss
+                            Your Site</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Services Grid (6 cards) -->
+        <section class="section">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 60px;">
+                    <span class="section-subtitle">EXPERT AUDITING PRACTICE</span>
+                    <h2 class="section-title">Core Accessibility Services</h2>
+                </div>
+                <div class="grid grid-3">
+                    <div class="card" data-reveal>
+                        <img src="assets/images/wcag-audit.png" alt="WCAG 2.2 Audits" class="card-img-top">
+                        <div class="card-content">
+                            <h3 class="card-title">WCAG Conformance Review</h3>
+                            <p class="card-text">Full structural DOM, ARIA, and contrast evaluations against official
+                                WCAG 2.2 AA compliance standards.</p>
+                            <div class="card-footer" style="padding: 0;">
+                                <a href="services-details.html" class="btn btn-outline" style="width: 100%;">Explore
+                                    Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-reveal>
+                        <img src="assets/images/screen-reader.png" alt="Assistive Technology Testing"
+                            class="card-img-top">
+                        <div class="card-content">
+                            <h3 class="card-title">Assistive Technology Testing</h3>
+                            <p class="card-text">Rigorous manual testing using NVDA, VoiceOver, and JAWS to verify real
+                                screen reader experience.</p>
+                            <div class="card-footer" style="padding: 0;">
+                                <a href="services-details.html" class="btn btn-outline" style="width: 100%;">Explore
+                                    Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-reveal>
+                        <img src="assets/images/ada-compliance.png" alt="ADA Risk Review" class="card-img-top">
+                        <div class="card-content">
+                            <h3 class="card-title">ADA Risk Review</h3>
+                            <p class="card-text">Legal risk mitigation and technical auditing under ADA Title III and
+                                Section 508 legal standards.</p>
+                            <div class="card-footer" style="padding: 0;">
+                                <a href="services-details.html" class="btn btn-outline" style="width: 100%;">Explore
+                                    Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-reveal>
+                        <img src="assets/images/vpat-gen.png" alt="VPAT Documentation" class="card-img-top">
+                        <div class="card-content">
+                            <h3 class="card-title">VPAT & ACR Documentation</h3>
+                            <p class="card-text">Voluntary Product Accessibility Templates created for enterprise
+                                procurement and government bids.</p>
+                            <div class="card-footer" style="padding: 0;">
+                                <a href="services-details.html" class="btn btn-outline" style="width: 100%;">Explore
+                                    Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-reveal>
+                        <img src="assets/images/remediation.png" alt="Remediation Support" class="card-img-top">
+                        <div class="card-content">
+                            <h3 class="card-title">Remediation Support</h3>
+                            <p class="card-text">Direct code snippets and developer guidance to resolve accessibility
+                                barriers quickly and cleanly.</p>
+                            <div class="card-footer" style="padding: 0;">
+                                <a href="services-details.html" class="btn btn-outline" style="width: 100%;">Explore
+                                    Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-reveal>
+                        <img src="assets/images/inclusive-ux.png" alt="Inclusive UX Consulting" class="card-img-top">
+                        <div class="card-content">
+                            <h3 class="card-title">Inclusive UX Consulting</h3>
+                            <p class="card-text">Pre-release design reviews ensuring components are accessible from
+                                initial design wireframe.</p>
+                            <div class="card-footer" style="padding: 0;">
+                                <a href="services-details.html" class="btn btn-outline" style="width: 100%;">Explore
+                                    Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Process Timeline -->
+        <section class="section" style="background-color: #f1f5f9;">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 60px;">
+                    <span class="section-subtitle">METHODOLOGY</span>
+                    <h2 class="section-title">From Finding to Verification</h2>
+                </div>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div style="border-left: 4px solid var(--primary); padding-left: 40px; position: relative;">
+                        <div style="margin-bottom: 50px; position: relative;" data-reveal>
+                            <span
+                                style="position: absolute; left: -54px; top: 0; width: 24px; height: 24px; background: var(--primary); border-radius: 50%; border: 4px solid #fff;"></span>
+                            <h3 style="margin-bottom: 10px;">01. Scope & Strategy</h3>
+                            <p>We map your digital surface area and define high-impact user flows for technical review.
+                            </p>
+                        </div>
+                        <div style="margin-bottom: 50px; position: relative;" data-reveal>
+                            <span
+                                style="position: absolute; left: -54px; top: 0; width: 24px; height: 24px; background: var(--primary); border-radius: 50%; border: 4px solid #fff;"></span>
+                            <h3 style="margin-bottom: 10px;">02. Technical Examination</h3>
+                            <p>Manual screen reader and automated testing to identify complex barrier patterns.</p>
+                        </div>
+                        <div style="margin-bottom: 50px; position: relative;" data-reveal>
+                            <span
+                                style="position: absolute; left: -54px; top: 0; width: 24px; height: 24px; background: var(--primary); border-radius: 50%; border: 4px solid #fff;"></span>
+                            <h3 style="margin-bottom: 10px;">03. Evidence & Remediation</h3>
+                            <p>Actionable findings reports featuring exact code fixes and severity classifications.</p>
+                        </div>
+                        <div style="position: relative;" data-reveal>
+                            <span
+                                style="position: absolute; left: -54px; top: 0; width: 24px; height: 24px; background: var(--primary); border-radius: 50%; border: 4px solid #fff;"></span>
+                            <h3 style="margin-bottom: 10px;">04. Verification & Sign-off</h3>
+                            <p>Re-testing after developer fixes to verify conformance and issue compliance
+                                certification.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Screen Reader Showcase -->
+        <section class="section">
+            <div class="container">
+                <div class="grid grid-2" style="align-items: center;">
+                    <div data-reveal>
+                        <img src="assets/images/screen_reader_testing.png" alt="Screen Reader Testing"
+                            style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); width: 100%;">
+                    </div>
+                    <div data-reveal>
+                        <span class="section-subtitle">ASSISTIVE TECH EVALUATION</span>
+                        <h2 class="section-title">Screen Reader Testing Methodology</h2>
+                        <p style="margin-bottom: 25px;">Automated tools miss up to 70% of context barriers. We evaluate
+                            your product through live human navigation.</p>
+                        <ul style="margin-bottom: 30px;">
+                            <li style="margin-bottom: 15px;"><i class="fas fa-check-circle"
+                                    style="color: var(--success); margin-right: 10px;"></i> <strong>NVDA
+                                    (Windows):</strong> Desktop web screen reader navigation testing.</li>
+                            <li style="margin-bottom: 15px;"><i class="fas fa-check-circle"
+                                    style="color: var(--success); margin-right: 10px;"></i> <strong>VoiceOver
+                                    (macOS/iOS):</strong> Native Apple platform assistive UX verification.</li>
+                            <li style="margin-bottom: 15px;"><i class="fas fa-check-circle"
+                                    style="color: var(--success); margin-right: 10px;"></i> <strong>JAWS:</strong>
+                                Professional desktop screen reader testing for enterprise users.</li>
+                        </ul>
+                        <a href="portfolio.html" class="btn btn-primary">View Case Evidence</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Case Studies (4 cards) -->
+        <section class="section" style="background-color: #0f172a; color: white;">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 60px;">
+                    <span class="section-subtitle">Success Stories</span>
+                    <h2 class="section-title"
+                        style="background: linear-gradient(135deg, #fff, #DCE4D5); -webkit-background-clip: text; background-clip: text; -webkit-fill-color: transparent;">
+                        Recent Audit Results</h2>
+                </div>
+                <div class="grid grid-4">
+                    <div class="card"
+                        style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);"
+                        data-reveal>
+                        <img src="assets/images/braille_user.png" alt="Case Study 1" class="card-img">
+                        <div class="card-content">
+                            <h3 class="card-title" style="color: white;">FinTech SaaS Audit</h3>
+                            <p class="card-text" style="color: #94a3b8;">Increased accessibility score from 45% to 98%
+                                in 3 months.</p>
+                            <div class="card-footer" style="padding: 0;">
+                                <a href="portfolio.html" class="btn btn-outline"
+                                    style="width: 100%; border-color: rgba(255,255,255,0.2); color: white;">View Case
+                                    Study</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card"
+                        style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);"
+                        data-reveal>
+                        <img src="assets/images/keyboard_hands.png" alt="Case Study 2" class="card-img">
+                        <div class="card-content">
+                            <h3 class="card-title" style="color: white;">E-Commerce Platform</h3>
+                            <p class="card-text" style="color: #94a3b8;">Eliminated checkout barriers for keyboard and
+                                screen reader users.</p>
+                            <div class="card-footer" style="padding: 0;">
+                                <a href="portfolio.html" class="btn btn-outline"
+                                    style="width: 100%; border-color: rgba(255,255,255,0.2); color: white;">View Case
+                                    Study</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card"
+                        style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);"
+                        data-reveal>
+                        <img src="assets/images/auditor_monitor.png" alt="Case Study 3" class="card-img">
+                        <div class="card-content">
+                            <h3 class="card-title" style="color: white;">GovTech Portal</h3>
+                            <p class="card-text" style="color: #94a3b8;">Achieved strict Section 508 compliance for
+                                public service portal.</p>
+                            <div class="card-footer" style="padding: 0;">
+                                <a href="portfolio.html" class="btn btn-outline"
+                                    style="width: 100%; border-color: rgba(255,255,255,0.2); color: white;">View Case
+                                    Study</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card"
+                        style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);"
+                        data-reveal>
+                        <img src="assets/images/inclusive_team.png" alt="Case Study 4" class="card-img">
+                        <div class="card-content">
+                            <h3 class="card-title" style="color: white;">Healthcare App</h3>
+                            <p class="card-text" style="color: #94a3b8;">Implemented accessible health charts and data
+                                visualizations.</p>
+                            <div class="card-footer" style="padding: 0;">
+                                <a href="portfolio.html" class="btn btn-outline"
+                                    style="width: 100%; border-color: rgba(255,255,255,0.2); color: white;">View Case
+                                    Study</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: CTA + Accessibility Score Checker -->
+        <section class="section">
+            <div class="container">
+                <div class="cta-grid"
+                    style="background: var(--primary); border-radius: var(--radius-lg); padding: 60px; color: white; display: grid; gap: 40px; align-items: center;">
+                    <div data-reveal>
+                        <h2 style="color: white; font-size: 2.5rem; margin-bottom: 20px;">Check Your Accessibility Score
+                        </h2>
+                        <p style="margin-bottom: 30px; opacity: 0.9;">Enter your URL below to get a quick overview of
+                            your website's accessibility compliance status.</p>
+                        <form style="display: flex; gap: 10px;">
+                            <input type="url" placeholder="https://yourwebsite.com"
+                                style="flex-grow: 1; padding: 15px; border-radius: var(--radius-sm); color: var(--black);"
+                                required id="score-url">
+                            <button type="submit" class="btn" id="analyze-btn"
+                                style="background: var(--black); color: var(--white);">Analyze <i
+                                    class="fas fa-microscope"></i></button>
+                        </form>
+                    </div>
+                    <div data-reveal
+                        style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: var(--radius-md); text-align: center;">
+                        <div style="font-size: 4rem; font-weight: 800; margin-bottom: 10px;">--</div>
+                        <p style="text-transform: uppercase; letter-spacing: 2px;">Predicted Score</p>
+                        <div
+                            style="width: 100%; height: 10px; background: rgba(255,255,255,0.2); border-radius: 5px; margin: 20px 0;">
+                            <div style="width: 30%; height: 100%; background: #fff; border-radius: 5px;"></div>
+                        </div>
+                        <p style="font-size: 14px; opacity: 0.8;">Run a full audit to see detailed metrics</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="logo" style="margin-bottom: 25px;">
+                        <i class="fas fa-universal-access"></i>
+                        <span>WACAAegis</span>
+                    </a>
+                    <p>Dedicated to making the web accessible for everyone. I provide enterprise-level accessibility
+                        audits and remediation guidance.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services-details.html">WCAG Audits</a></li>
+                        <li><a href="services-details.html">ADA Compliance</a></li>
+                        <li><a href="services-details.html">VPAT Reports</a></li>
+                        <li><a href="services-details.html">Remediation</a></li>
+                        <li><a href="services-details.html">UX Consulting</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Newsletter</h4>
+                    <p style="color: #94a3b8; font-size: 14px; margin-bottom: 20px;">Subscribe to get the latest
+                        accessibility updates.</p>
+                    <form style="display: flex; gap: 5px;">
+                        <input type="email" placeholder="Email Address"
+                            style="padding: 10px; border-radius: var(--radius-sm); flex-grow: 1; background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255,255,255,0.1);"
+                            required id="footer-email">
+                        <button type="submit" class="btn btn-primary" style="padding: 10px;"><i
+                                class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 WACAAegis. All rights reserved. | <a href="coming-soon.html">Privacy Policy</a> | <a
+                        href="coming-soon.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/accessibility.js"></script>
+
+    <button id="back-to-top" class="back-to-top" title="Back to Top" aria-label="Back to Top"><i
+            class="fas fa-arrow-up"></i></button>
+</body>
+
+</html>

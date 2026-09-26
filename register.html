@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <title>Register | Join WACAAegis</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background: #f1f5f9;
+        }
+
+        .login-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .login-box {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            max-width: 1100px;
+            width: 100%;
+            box-shadow: var(--shadow-lg);
+        }
+
+        @media (max-width: 768px) {
+            .login-box {
+                grid-template-columns: 1fr;
+            }
+
+            .login-visual {
+                order: 2;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 15px;
+                padding-top: 80px !important;
+                align-items: flex-start !important;
+                justify-content: flex-start !important;
+            }
+
+            .auth-inner-box {
+                padding: 30px 20px !important;
+            }
+
+            .social-grid {
+                grid-template-columns: 1fr !important;
+                gap: 12px !important;
+            }
+
+            .auth-header h2 {
+                font-size: 1.5rem !important;
+            }
+
+            .auth-toggles {
+                position: absolute !important;
+                top: 20px !important;
+                right: 20px !important;
+                gap: 10px !important;
+                z-index: 1100 !important;
+            }
+
+            .auth-toggles button {
+                width: 38px !important;
+                height: 38px !important;
+                font-size: 16px !important;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="auth-toggles"
+        style="position: absolute; top: 30px; right: 30px; display: flex; gap: 15px; z-index: 1100;">
+        <button class="theme-toggle" title="Toggle Theme"
+            style="background: white; border: 1px solid #e2e8f0; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;">🌙</button>
+        <button class="rtl-toggle" title="Toggle RTL/LTR"
+            style="background: white; border: 1px solid #e2e8f0; width: 44px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: 700; font-size: 13px;">RTL</button>
+    </div>
+    <div class="login-container">
+        <div class="login-box" style="grid-template-columns: 1fr; max-width: 600px;">
+            <div class="auth-inner-box" style="padding: 50px;">
+                <!-- Branding & Welcome Text moved here -->
+                <div class="auth-header" style="text-align: center; margin-bottom: 40px;">
+                    <a href="index.html" class="logo"
+                        style="color: var(--primary); justify-content: center; margin-bottom: 25px;"><i
+                            class="fas fa-universal-access"></i><span>WACAAegis</span></a>
+                    <h2 style="font-size: 1.8rem; margin-bottom: 15px;">Start Your Journey.</h2>
+                    <p style="color: var(--text-muted); font-size: 15px;">Join thousands of companies making their
+                        digital products accessible to everyone.</p>
+                </div>
+
+
+
+                <form action="dashboard.html" method="GET" style="display: grid; gap: 20px;">
+                    <div>
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px;">Full
+                            Name</label>
+                        <input type="text" placeholder="John Doe"
+                            style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #e2e8f0;" required>
+                    </div>
+                    <div>
+                        <label
+                            style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px;">Company</label>
+                        <input type="text" placeholder="Acme Inc"
+                            style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #e2e8f0;" required>
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px;">Work
+                            Email</label>
+                        <input type="email" placeholder="john@company.com"
+                            style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #e2e8f0;" required>
+                    </div>
+                    <div>
+                        <label
+                            style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px;">Password</label>
+                        <div style="position: relative;">
+                            <input type="password" placeholder="••••••••"
+                                style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #e2e8f0;"
+                                required id="reg-password">
+                            <button type="button" class="password-toggle"
+                                style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #94a3b8; cursor: pointer;"><i
+                                    class="fas fa-eye"></i></button>
+                        </div>
+                        <div style="margin-top: 10px; display: flex; gap: 5px;">
+                            <div style="flex: 1; height: 4px; background: var(--success); border-radius: 2px;"></div>
+                            <div style="flex: 1; height: 4px; background: var(--success); border-radius: 2px;"></div>
+                            <div style="flex: 1; height: 4px; background: #e2e8f0; border-radius: 2px;"></div>
+                            <div style="flex: 1; height: 4px; background: #e2e8f0; border-radius: 2px;"></div>
+                        </div>
+                        <span
+                            style="font-size: 11px; color: var(--text-muted); margin-top: 5px; display: block;">Strength:
+                            Good</span>
+                    </div>
+
+                    <div>
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px;">Confirm
+                            Password</label>
+                        <div style="position: relative;">
+                            <input type="password" placeholder="••••••••"
+                                style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #e2e8f0;"
+                                required id="confirm-password">
+                            <button type="button" class="password-toggle"
+                                style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #94a3b8; cursor: pointer;"><i
+                                    class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: flex-start; gap: 10px;">
+                        <input type="checkbox" id="terms" required style="margin-top: 5px;">
+                        <label for="terms" style="font-size: 13px; color: var(--text-muted);">I agree to the <a href="#"
+                                style="color: var(--primary);">Terms of Service</a> and <a href="#"
+                                style="color: var(--primary);">Privacy Policy</a>.</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="padding: 15px;">Create My Account</button>
+
+                    <div style="text-align: center; position: relative; margin: 10px 0;">
+                        <span
+                            style="background: white; padding: 0 15px; position: relative; z-index: 2; font-size: 14px; color: var(--text-muted);">Or
+                            sign up with</span>
+                        <div
+                            style="position: absolute; top: 50%; left: 0; width: 100%; height: 1px; background: #e2e8f0;">
+                        </div>
+                    </div>
+
+                    <div class="social-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <button type="button" class="btn btn-outline" style="font-size: 14px;"><i
+                                class="fab fa-google"></i> Google</button>
+                        <button type="button" class="btn btn-outline" style="font-size: 14px;"><i
+                                class="fab fa-apple"></i> Apple</button>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 25px;">
+                        <p style="color: var(--text-muted); font-size: 14px;">Already have an account? <a
+                                href="login.html" style="color: var(--primary); font-weight: 600;">Sign in</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/accessibility.js"></script>
+
+    <button id="back-to-top" class="back-to-top" title="Back to Top" aria-label="Back to Top"><i class="fas fa-arrow-up"></i></button>
+</body>
+
+</html>
+
+
+
