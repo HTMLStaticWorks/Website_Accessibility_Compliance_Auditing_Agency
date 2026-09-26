@@ -341,47 +341,97 @@
                 title: 'Compliance Analytics',
                 subtitle: 'Visualize your accessibility data and trends',
                 content: `
+                    <!-- Filter Analytics (Positioned at Top) -->
+                    <div class="table-container" style="padding: 25px; margin-bottom: 25px;">
+                        <h3>Filter Analytics</h3>
+                        <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Select timeframe, target domain, and compliance level to update performance metrics.</p>
+                        <div style="display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap; align-items: center;">
+                            <select id="filter-timeframe" onchange="applyAnalyticsFilters(document.getElementById('btn-apply-filters'))" style="padding: 10px 14px; border-radius: 6px; border: 1px solid var(--dash-border); background: var(--bg-card); color: var(--text-main); font-size: 14px;">
+                                <option value="30" selected>Last 30 Days</option>
+                                <option value="7">Last 7 Days</option>
+                                <option value="90">Last 90 Days</option>
+                                <option value="365">Last 12 Months</option>
+                                <option value="ytd">Year to Date (YTD)</option>
+                            </select>
+                            <select id="filter-domain" onchange="applyAnalyticsFilters(document.getElementById('btn-apply-filters'))" style="padding: 10px 14px; border-radius: 6px; border: 1px solid var(--dash-border); background: var(--bg-card); color: var(--text-main); font-size: 14px;">
+                                <option value="all" selected>All Domains (3 Active)</option>
+                                <option value="acme-main">acme-corp.com (Main Site)</option>
+                                <option value="acme-app">app.acme-corp.com (Web App)</option>
+                                <option value="acme-store">store.acme-corp.com (E-Commerce)</option>
+                            </select>
+                            <select id="filter-standard" onchange="applyAnalyticsFilters(document.getElementById('btn-apply-filters'))" style="padding: 10px 14px; border-radius: 6px; border: 1px solid var(--dash-border); background: var(--bg-card); color: var(--text-main); font-size: 14px;">
+                                <option value="a">WCAG 2.1 Level A</option>
+                                <option value="aa" selected>WCAG 2.1 Level AA</option>
+                                <option value="aaa">WCAG 2.2 Level AA</option>
+                            </select>
+                            <button class="btn btn-primary" id="btn-apply-filters" onclick="applyAnalyticsFilters(this)" style="display: inline-flex; align-items: center; gap: 8px;">
+                                <i class="fas fa-filter"></i> Apply Filters
+                            </button>
+                        </div>
+                        <div id="filter-status-msg" style="margin-top: 18px; padding: 12px 16px; border-radius: 8px; background: rgba(37,99,235,0.08); border: 1px solid rgba(37,99,235,0.2); color: var(--primary); font-size: 13.5px; font-weight: 500; display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-check-circle" style="color: var(--success); font-size: 1rem;"></i>
+                            <span>Active View: <strong>Last 30 Days</strong> &bull; <strong>All Domains (3 Active)</strong> &bull; <strong>WCAG 2.1 Level AA</strong></span>
+                        </div>
+                    </div>
+
                     <div class="dash-grid">
                         <div class="stat-card">
                             <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Avg Score</span>
-                            <div class="stat-value">88%</div>
+                            <div class="stat-value" id="analytics-avg-score" style="color: var(--success);">88%</div>
                         </div>
                         <div class="stat-card">
                             <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Trend</span>
-                            <div class="stat-value" style="color: var(--success);">+4.2%</div>
+                            <div class="stat-value" id="analytics-trend" style="color: var(--success);">+4.2%</div>
                         </div>
                         <div class="stat-card">
                             <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Top Violation</span>
-                            <div class="stat-value" style="font-size: 1.2rem; margin: 25px 0;">Contrast Ratio</div>
+                            <div class="stat-value" id="analytics-top-violation" style="font-size: 1.2rem; margin: 25px 0;">Color Contrast</div>
                         </div>
                         <div class="stat-card">
                             <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Pages Fixed</span>
-                            <div class="stat-value">84</div>
+                            <div class="stat-value" id="analytics-pages-fixed">84</div>
                         </div>
                     </div>
                     <div class="grid grid-2" style="margin-bottom: 40px; gap: 25px;">
-                        <div class="stat-card" style="height: 300px; display: flex; align-items: center; justify-content: center; background: #fafafa; padding: 25px;">
-                            <div style="text-align: center; color: #ccc;">
-                                <i class="fas fa-chart-line fa-3x"></i>
-                                <p style="margin-top: 10px;">Compliance Trend Chart Placeholder</p>
+                        <div class="stat-card" style="padding: 25px; min-height: 280px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                    <h3 style="margin: 0; font-size: 1.1rem;" id="analytics-chart-title">Compliance Trend Analytics</h3>
+                                    <span style="font-size: 12px; color: var(--success); font-weight: 700; background: rgba(16,185,129,0.1); padding: 4px 10px; border-radius: 20px;" id="analytics-trend-badge"><i class="fas fa-arrow-up"></i> +4.2%</span>
+                                </div>
+                                <p style="font-size: 13px; color: var(--text-muted);" id="analytics-chart-sub">Progressive WCAG Score Tracking for All Domains (Last 30 Days)</p>
+                            </div>
+                            <div style="display: flex; align-items: flex-end; justify-content: space-around; height: 160px; padding-top: 15px; border-bottom: 2px dashed var(--dash-border);">
+                                <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1;">
+                                    <span style="font-size: 12px; font-weight: 700; color: var(--primary);" id="bar-val-1">74%</span>
+                                    <div id="bar-height-1" style="width: 38px; height: 88px; background: rgba(37, 99, 235, 0.25); border-radius: 6px 6px 0 0; transition: all 0.4s ease;"></div>
+                                    <span style="font-size: 12px; color: var(--text-muted); font-weight: 500;" id="bar-lbl-1">Wk 1</span>
+                                </div>
+                                <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1;">
+                                    <span style="font-size: 12px; font-weight: 700; color: var(--primary);" id="bar-val-2">79%</span>
+                                    <div id="bar-height-2" style="width: 38px; height: 95px; background: rgba(37, 99, 235, 0.5); border-radius: 6px 6px 0 0; transition: all 0.4s ease;"></div>
+                                    <span style="font-size: 12px; color: var(--text-muted); font-weight: 500;" id="bar-lbl-2">Wk 2</span>
+                                </div>
+                                <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1;">
+                                    <span style="font-size: 12px; font-weight: 700; color: var(--primary);" id="bar-val-3">83%</span>
+                                    <div id="bar-height-3" style="width: 38px; height: 100px; background: rgba(37, 99, 235, 0.75); border-radius: 6px 6px 0 0; transition: all 0.4s ease;"></div>
+                                    <span style="font-size: 12px; color: var(--text-muted); font-weight: 500;" id="bar-lbl-3">Wk 3</span>
+                                </div>
+                                <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1;">
+                                    <span style="font-size: 12px; font-weight: 700; color: white; background: var(--primary); padding: 2px 8px; border-radius: 10px;" id="bar-val-4">88%</span>
+                                    <div id="bar-height-4" style="width: 38px; height: 106px; background: var(--primary); border-radius: 6px 6px 0 0; transition: all 0.4s ease; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);"></div>
+                                    <span style="font-size: 12px; color: var(--primary); font-weight: 700;" id="bar-lbl-4">Current</span>
+                                </div>
                             </div>
                         </div>
                         <div class="stat-card" style="padding: 25px;">
                             <h3 style="margin-bottom: 20px;">Issue Breakdown</h3>
                             <ul style="list-style: none; padding: 0;">
-                                <li style="margin-bottom: 15px; display: flex; justify-content: space-between;"><span>Images (Alt text)</span><strong>45%</strong></li>
-                                <li style="margin-bottom: 15px; display: flex; justify-content: space-between;"><span>Navigation</span><strong>25%</strong></li>
-                                <li style="margin-bottom: 15px; display: flex; justify-content: space-between;"><span>Forms</span><strong>15%</strong></li>
-                                <li style="margin-bottom: 15px; display: flex; justify-content: space-between;"><span>Others</span><strong>15%</strong></li>
+                                <li style="margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;"><span>Color Contrast</span><strong id="breakdown-contrast" style="color: var(--primary); font-size: 1rem;">45%</strong></li>
+                                <li style="margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;"><span>Missing Alt Text</span><strong id="breakdown-alt" style="color: var(--primary); font-size: 1rem;">25%</strong></li>
+                                <li style="margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;"><span>Form Labels & ARIA</span><strong id="breakdown-aria" style="color: var(--primary); font-size: 1rem;">15%</strong></li>
+                                <li style="margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;"><span>Keyboard Traps & Focus</span><strong id="breakdown-focus" style="color: var(--primary); font-size: 1rem;">15%</strong></li>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="table-container" style="padding: 25px;">
-                        <h3>Filter Analytics</h3>
-                        <div style="display: flex; gap: 10px; margin-top: 15px;">
-                            <select style="padding: 8px; border-radius: 5px; border: 1px solid #ddd;"><option>Last 30 Days</option></select>
-                            <select style="padding: 8px; border-radius: 5px; border: 1px solid #ddd;"><option>All Domains</option></select>
-                            <button class="btn btn-primary">Apply Filters</button>
                         </div>
                     </div>
                 `
@@ -473,6 +523,147 @@
                         <button class="btn" style="background: white; color: var(--primary);">Start Verification</button>
                     </div>
                 `
+            },
+            'Settings': {
+                title: 'Account & Platform Settings',
+                subtitle: 'Manage your accessibility preferences, API keys, notifications, and team access',
+                content: `
+                    <div class="dash-grid">
+                        <div class="stat-card">
+                            <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Organization</span>
+                            <div class="stat-value" style="font-size: 1.3rem; margin: 15px 0;">Acme Corp</div>
+                            <span style="font-size: 12px; color: var(--success);">Enterprise License</span>
+                        </div>
+                        <div class="stat-card">
+                            <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Team Members</span>
+                            <div class="stat-value">5 Active</div>
+                            <span style="font-size: 12px; color: var(--text-muted);">2 Admin, 3 Dev</span>
+                        </div>
+                        <div class="stat-card">
+                            <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">API Rate Limit</span>
+                            <div class="stat-value" style="color: var(--success);">10k / day</div>
+                            <span style="font-size: 12px; color: var(--text-muted);">1,240 used today</span>
+                        </div>
+                        <div class="stat-card">
+                            <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Audit Target</span>
+                            <div class="stat-value" style="font-size: 1.3rem; margin: 15px 0;">WCAG 2.2 AA</div>
+                            <span style="font-size: 12px; color: var(--primary);">Standard Configured</span>
+                        </div>
+                    </div>
+                    <div class="table-container" style="padding: 30px; margin-bottom: 25px;">
+                        <h3 style="margin-bottom: 20px;">General Preferences</h3>
+                        <form style="display: grid; gap: 20px; max-width: 600px;" onsubmit="event.preventDefault(); alert('Settings saved successfully!');">
+                            <div>
+                                <label style="display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px;">Organization Name</label>
+                                <input type="text" value="Acme Corporation" style="width: 100%; padding: 10px 14px; border-radius: 6px; border: 1px solid var(--dash-border); background: var(--bg-card); color: var(--text-main);">
+                            </div>
+                            <div>
+                                <label style="display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px;">Compliance Standard Target</label>
+                                <select style="width: 100%; padding: 10px 14px; border-radius: 6px; border: 1px solid var(--dash-border); background: var(--bg-card); color: var(--text-main);">
+                                    <option selected>WCAG 2.2 Level AA (Latest)</option>
+                                    <option>WCAG 2.1 Level AA</option>
+                                    <option>Section 508 / ADA Title III</option>
+                                    <option>EN 301 549 (EU Mandate)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label style="display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px;">Automated Audit Frequency</label>
+                                <select style="width: 100%; padding: 10px 14px; border-radius: 6px; border: 1px solid var(--dash-border); background: var(--bg-card); color: var(--text-main);">
+                                    <option selected>Weekly Deep Crawl</option>
+                                    <option>Daily Critical Checks</option>
+                                    <option>Bi-Weekly Full Scan</option>
+                                    <option>Monthly Compliance Digest</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label style="display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px;">API Key</label>
+                                <div style="display: flex; gap: 10px;">
+                                    <input type="text" value="wac_live_8f39a1b02c9e471d9a5b" readonly style="flex-grow: 1; padding: 10px 14px; border-radius: 6px; border: 1px solid var(--dash-border); background: rgba(0,0,0,0.03); color: var(--text-muted); font-family: monospace;">
+                                    <button type="button" class="btn btn-outline" style="padding: 10px 15px;" onclick="navigator.clipboard.writeText('wac_live_8f39a1b02c9e471d9a5b'); alert('API Key copied to clipboard!');">Copy</button>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="margin-top: 10px; justify-self: start;">Save All Settings</button>
+                        </form>
+                    </div>
+                `
+            },
+            'Support': {
+                title: 'Help & Support Center',
+                subtitle: 'Get direct assistance from CPACC certified accessibility engineers',
+                content: `
+                    <div class="dash-grid">
+                        <div class="stat-card">
+                            <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Assigned Auditor</span>
+                            <div class="stat-value" style="font-size: 1.3rem; margin: 15px 0;">Elena R.</div>
+                            <span style="font-size: 12px; color: var(--success);">CPACC Certified</span>
+                        </div>
+                        <div class="stat-card">
+                            <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Response Time</span>
+                            <div class="stat-value" style="color: var(--success);">&lt; 2 Hours</div>
+                            <span style="font-size: 12px; color: var(--text-muted);">Priority SLA</span>
+                        </div>
+                        <div class="stat-card">
+                            <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Open Tickets</span>
+                            <div class="stat-value">1</div>
+                            <span style="font-size: 12px; color: var(--primary);">In Review</span>
+                        </div>
+                        <div class="stat-card">
+                            <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Support Plan</span>
+                            <div class="stat-value" style="font-size: 1.3rem; margin: 15px 0;">Enterprise</div>
+                            <span style="font-size: 12px; color: var(--success);">Direct Dev Sync</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-2" style="margin-bottom: 25px; gap: 25px;">
+                        <div class="table-container" style="padding: 25px;">
+                            <h3 style="margin-bottom: 20px;">Submit Support Ticket</h3>
+                            <form style="display: grid; gap: 15px;" onsubmit="event.preventDefault(); alert('Support Ticket submitted successfully!');">
+                                <div>
+                                    <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 5px;">Subject</label>
+                                    <input type="text" placeholder="e.g. Guidance on Screen Reader Focus Trap" required style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--dash-border); background: var(--bg-card); color: var(--text-main);">
+                                </div>
+                                <div>
+                                    <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 5px;">Issue Priority</label>
+                                    <select style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--dash-border); background: var(--bg-card); color: var(--text-main);">
+                                        <option>Normal (Question / Guidance)</option>
+                                        <option>High (Sprint Blocker)</option>
+                                        <option>Critical (Legal Inquiry / Release Hold)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 5px;">Description & Code Details</label>
+                                    <textarea rows="4" placeholder="Describe the DOM component or WCAG criteria question..." required style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--dash-border); background: var(--bg-card); color: var(--text-main); font-family: inherit;"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary" style="justify-self: start;">Submit Ticket</button>
+                            </form>
+                        </div>
+                        <div class="table-container" style="padding: 25px;">
+                            <h3 style="margin-bottom: 20px;">Documentation & Guides</h3>
+                            <div style="display: grid; gap: 12px;">
+                                <a href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 8px; border: 1px solid var(--dash-border); text-decoration: none; color: var(--text-main);">
+                                    <i class="fas fa-book" style="color: var(--primary); font-size: 1.2rem;"></i>
+                                    <div>
+                                        <div style="font-weight: 600; font-size: 14px;">WCAG 2.2 AA Checklist</div>
+                                        <div style="font-size: 12px; color: var(--text-muted);">Quick reference guide for developers</div>
+                                    </div>
+                                </a>
+                                <a href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 8px; border: 1px solid var(--dash-border); text-decoration: none; color: var(--text-main);">
+                                    <i class="fas fa-file-code" style="color: var(--primary); font-size: 1.2rem;"></i>
+                                    <div>
+                                        <div style="font-weight: 600; font-size: 14px;">ARIA Pattern Code Snippets</div>
+                                        <div style="font-size: 12px; color: var(--text-muted);">Modals, Tabs, Comboboxes & Accordions</div>
+                                    </div>
+                                </a>
+                                <a href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 8px; border: 1px solid var(--dash-border); text-decoration: none; color: var(--text-main);">
+                                    <i class="fas fa-graduation-cap" style="color: var(--primary); font-size: 1.2rem;"></i>
+                                    <div>
+                                        <div style="font-weight: 600; font-size: 14px;">Assistive Tech Testing Setup</div>
+                                        <div style="font-size: 12px; color: var(--text-muted);">Configuring NVDA, VoiceOver & JAWS</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `
             }
         };
 
@@ -521,6 +712,149 @@
                 }
             });
         });
+
+        window.applyAnalyticsFilters = function(btn) {
+            const timeframeSelect = document.getElementById('filter-timeframe');
+            const domainSelect = document.getElementById('filter-domain');
+            const standardSelect = document.getElementById('filter-standard');
+
+            if (!timeframeSelect || !domainSelect || !standardSelect) return;
+
+            const tf = timeframeSelect.value;
+            const dom = domainSelect.value;
+            const std = standardSelect.value;
+            const tfText = timeframeSelect.options[timeframeSelect.selectedIndex].text;
+            const domText = domainSelect.options[domainSelect.selectedIndex].text;
+            const stdText = standardSelect.options[standardSelect.selectedIndex].text;
+
+            const targetBtn = btn || document.getElementById('btn-apply-filters');
+            if (targetBtn) {
+                targetBtn.disabled = true;
+                targetBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Filtering...';
+            }
+
+            const cards = document.querySelectorAll('#dashboard-content-area .stat-card');
+            cards.forEach(c => c.style.opacity = '0.5');
+
+            setTimeout(() => {
+                let avgScore = '88%';
+                let trend = '+4.2%';
+                let trendColor = 'var(--success)';
+                let topViolation = 'Color Contrast';
+                let pagesFixed = '84';
+                let barValues = [74, 79, 83, 88];
+                let barLabels = ['Wk 1', 'Wk 2', 'Wk 3', 'Current'];
+                let breakdown = { contrast: '45%', alt: '25%', aria: '15%', focus: '15%' };
+
+                if (dom === 'acme-main') {
+                    avgScore = (tf === '7' ? '96%' : (tf === '90' ? '91%' : (tf === '365' ? '89%' : '94%')));
+                    trend = '+3.8%';
+                    topViolation = 'Form Labels';
+                    pagesFixed = (tf === '7' ? '12' : (tf === '90' ? '95' : '38'));
+                    barValues = [84, 88, 91, 94];
+                    breakdown = { contrast: '20%', alt: '30%', aria: '35%', focus: '15%' };
+                } else if (dom === 'acme-app') {
+                    avgScore = (tf === '7' ? '89%' : (tf === '90' ? '82%' : (tf === '365' ? '79%' : '85%')));
+                    trend = '+6.1%';
+                    topViolation = 'ARIA Attributes';
+                    pagesFixed = (tf === '7' ? '8' : (tf === '90' ? '64' : '29'));
+                    barValues = [70, 75, 80, 85];
+                    breakdown = { contrast: '25%', alt: '15%', aria: '45%', focus: '15%' };
+                } else if (dom === 'acme-store') {
+                    avgScore = (tf === '7' ? '79%' : (tf === '90' ? '71%' : (tf === '365' ? '68%' : '76%')));
+                    trend = '-1.5%';
+                    trendColor = 'var(--danger)';
+                    topViolation = 'Color Contrast';
+                    pagesFixed = (tf === '7' ? '4' : (tf === '90' ? '42' : '17'));
+                    barValues = [78, 77, 75, 76];
+                    breakdown = { contrast: '55%', alt: '20%', aria: '15%', focus: '10%' };
+                } else {
+                    if (tf === '7') {
+                        avgScore = '91%';
+                        trend = '+1.8%';
+                        pagesFixed = '14';
+                        barValues = [88, 89, 90, 91];
+                        barLabels = ['Day 1-2', 'Day 3-4', 'Day 5-6', 'Today'];
+                    } else if (tf === '90') {
+                        avgScore = '84%';
+                        trend = '+8.5%';
+                        pagesFixed = '186';
+                        barValues = [72, 76, 80, 84];
+                        barLabels = ['Month 1', 'Month 2', 'Month 3', 'Current'];
+                    } else if (tf === '365' || tf === 'ytd') {
+                        avgScore = '81%';
+                        trend = '+12.0%';
+                        pagesFixed = '420';
+                        barValues = [65, 70, 76, 81];
+                        barLabels = ['Q1', 'Q2', 'Q3', 'Q4'];
+                    }
+                }
+
+                if (std === 'a') {
+                    avgScore = Math.min(100, parseInt(avgScore) + 5) + '%';
+                } else if (std === 'aaa') {
+                    avgScore = Math.max(50, parseInt(avgScore) - 6) + '%';
+                    topViolation = 'Focus Visual Contrast';
+                }
+
+                // Update DOM elements
+                const elAvg = document.getElementById('analytics-avg-score');
+                const elTrend = document.getElementById('analytics-trend');
+                const elTrendBadge = document.getElementById('analytics-trend-badge');
+                const elTop = document.getElementById('analytics-top-violation');
+                const elFixed = document.getElementById('analytics-pages-fixed');
+                const elChartSub = document.getElementById('analytics-chart-sub');
+
+                if (elAvg) elAvg.innerText = avgScore;
+                if (elTrend) {
+                    elTrend.innerText = trend;
+                    elTrend.style.color = trendColor;
+                }
+                if (elTrendBadge) {
+                    elTrendBadge.innerHTML = `<i class="fas fa-arrow-${trend.startsWith('-') ? 'down' : 'up'}"></i> ${trend}`;
+                    elTrendBadge.style.color = trendColor;
+                    elTrendBadge.style.background = trend.startsWith('-') ? 'rgba(239,68,68,0.1)' : 'rgba(16,185,129,0.1)';
+                }
+                if (elTop) elTop.innerText = topViolation;
+                if (elFixed) elFixed.innerText = pagesFixed;
+                if (elChartSub) elChartSub.innerText = `Progressive WCAG Score Tracking for ${domText} (${tfText})`;
+
+                // Update Chart Bars
+                for (let i = 1; i <= 4; i++) {
+                    const valEl = document.getElementById('bar-val-' + i);
+                    const barEl = document.getElementById('bar-height-' + i);
+                    const lblEl = document.getElementById('bar-lbl-' + i);
+                    if (valEl) valEl.innerText = barValues[i - 1] + '%';
+                    if (barEl) barEl.style.height = (barValues[i - 1] * 1.25) + 'px';
+                    if (lblEl && barLabels[i - 1]) lblEl.innerText = barLabels[i - 1];
+                }
+
+                // Update Breakdown
+                const bContrast = document.getElementById('breakdown-contrast');
+                const bAlt = document.getElementById('breakdown-alt');
+                const bAria = document.getElementById('breakdown-aria');
+                const bFocus = document.getElementById('breakdown-focus');
+                if (bContrast) bContrast.innerText = breakdown.contrast;
+                if (bAlt) bAlt.innerText = breakdown.alt;
+                if (bAria) bAria.innerText = breakdown.aria;
+                if (bFocus) bFocus.innerText = breakdown.focus;
+
+                // Status message
+                const statusMsg = document.getElementById('filter-status-msg');
+                if (statusMsg) {
+                    statusMsg.innerHTML = `<i class="fas fa-check-circle" style="color: var(--success); font-size: 1rem;"></i> <span>Active View: <strong>${tfText}</strong> &bull; <strong>${domText}</strong> &bull; <strong>${stdText}</strong></span>`;
+                }
+
+                cards.forEach(c => c.style.opacity = '1.0');
+                if (targetBtn) {
+                    targetBtn.disabled = false;
+                    targetBtn.innerHTML = '<i class="fas fa-check"></i> Applied!';
+                    setTimeout(() => {
+                        targetBtn.innerHTML = '<i class="fas fa-filter"></i> Apply Filters';
+                    }, 1500);
+                }
+            }, 300);
+        };
     </script>
 
     <button id="back-to-top" class="back-to-top" title="Back to Top" aria-label="Back to Top"><i class="fas fa-arrow-up"></i></button>

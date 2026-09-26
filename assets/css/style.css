@@ -300,6 +300,21 @@ select {
     color: var(--white);
 }
 
+.btn-outline-white {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+}
+
+.btn-outline-white:hover {
+    background-color: #ffffff !important;
+    color: var(--primary) !important;
+    border-color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.35);
+}
+
 .btn-white-always {
     background: #ffffff !important;
     color: var(--primary) !important;
@@ -313,6 +328,56 @@ select {
     border-color: #ffffff !important;
     transform: translateY(-2px) !important;
     box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Remediation Feature Icon Boxes */
+.remediation-icon-box {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.remediation-icon-box.icon-box-green {
+    background-color: #dcfce7;
+    color: #15803d;
+}
+
+.remediation-icon-box.icon-box-indigo {
+    background-color: #e0e7ff;
+    color: #4338ca;
+}
+
+.remediation-icon-box.icon-box-orange {
+    background-color: #ffedd5;
+    color: #9a3412;
+}
+
+/* Detailed Feature Matrix Table */
+.matrix-table-container {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+}
+
+.matrix-table thead tr {
+    background: #0f172a;
+    color: #ffffff;
+}
+
+.matrix-table thead th {
+    color: #ffffff !important;
+    font-weight: 700;
+}
+
+.matrix-table tbody tr {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.matrix-table tbody td {
+    color: #334155;
 }
 
 /* Card Component */
@@ -806,27 +871,32 @@ select {
 @media (max-width: 1024px) {
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 40px 30px;
     }
 }
 
 @media (max-width: 768px) {
     .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px 25px;
+        text-align: left;
+    }
+
+    .footer-grid .logo,
+    .footer-grid .social-links,
+    .footer-grid form {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-grid {
         grid-template-columns: 1fr;
         text-align: center;
     }
 
-    .footer-grid .logo {
-        justify-content: center;
-    }
-
-    .footer-grid .social-links {
-        justify-content: center;
-    }
-
-    .footer-grid .footer-links {
-        padding: 0;
-    }
-
+    .footer-grid .logo,
+    .footer-grid .social-links,
     .footer-grid form {
         justify-content: center;
     }
