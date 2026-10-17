@@ -45,13 +45,13 @@
                             style="padding: 8px 15px; width: 100%; text-align: center;">Login</a>
                     </li>
                     <li class="mobile-toggle-wrapper">
-                        <button class="theme-toggle" title="Toggle Theme">🌙</button>
+                        <button class="theme-toggle" aria-label="Toggle theme" title="Toggle Theme"><i class="fas fa-moon"></i></button>
                         <button class="rtl-toggle" title="Toggle RTL/LTR">RTL</button>
                     </li>
                 </ul>
 
                 <div class="nav-actions">
-                    <button class="theme-toggle" title="Toggle Theme">🌙</button>
+                    <button class="theme-toggle" aria-label="Toggle theme" title="Toggle Theme"><i class="fas fa-moon"></i></button>
                     <button class="rtl-toggle" title="Toggle RTL/LTR">RTL</button>
                     <a href="login.html" class="btn btn-outline" style="padding: 8px 15px;">Login</a>
                     <div class="hamburger">
@@ -66,10 +66,14 @@
 
     <main id="main-content">
         <!-- Section 1: Hero -->
-        <section class="section hero"
-            style="min-height: 100vh; padding: 80px 0 0; display: flex; align-items: center; background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; text-align: center; color: white;">
+        <section class="section hero hero-homepage"
+            style="min-height: 100vh; padding: 120px 0 80px; display: flex; align-items: center; justify-content: center; box-sizing: border-box; background: radial-gradient(circle at center, rgba(113, 128, 106, 0.25) 0%, rgba(15, 23, 42, 0.85) 100%), url('https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; text-align: center; color: white;">
             <div class="container">
                 <div data-reveal style="max-width: 900px; margin: 0 auto;">
+                    <div class="hero-pill-badge">
+                        <i class="fas fa-shield-halved"></i>
+                        <span>WCAG 2.2 AA & Section 508 Verification</span>
+                    </div>
                     <span class="section-subtitle" style="color: #DCE4D5;">ACCESSIBILITY AUDITING PRACTICE</span>
                     <h1 class="section-title hero-title" style="font-size: 3.5rem; margin-bottom: 25px; color: white;">
                         Find what prevents people from using your website.</h1>
@@ -78,14 +82,19 @@
                         into clear, actionable code fixes for your engineering team.
                     </p>
                     <div class="hero-btns"
-                        style="display: flex; gap: 20px; justify-content: center; margin-bottom: 50px;">
+                        style="display: flex; gap: 20px; justify-content: center;">
                         <a href="services.html" class="btn btn-primary" style="padding: 15px 40px;">Explore Solutions <i
                                 class="fas fa-arrow-right" style="margin-left: 10px;"></i></a>
                         <a href="contact.html" class="btn btn-outline-white"
-                            style="padding: 15px 40px;">Discuss
-                            Your Site</a>
+                            style="padding: 15px 40px;">Discuss Your Site</a>
                     </div>
 
+                    <!-- Trust Bar with Assistive Tech Indicators -->
+                    <div class="hero-trust-bar">
+                        <div class="trust-item"><i class="fas fa-eye"></i> <span>Screen Reader Tested (NVDA & VoiceOver)</span></div>
+                        <div class="trust-item"><i class="fas fa-certificate"></i> <span>IAAP CPACC / WAS Certified</span></div>
+                        <div class="trust-item"><i class="fas fa-code"></i> <span>Developer Code-Fix Ready</span></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -319,34 +328,73 @@
             </div>
         </section>
 
-        <!-- Section 6: CTA + Accessibility Score Checker -->
-        <section class="section">
+        <!-- Section 6: Real-Time WCAG Diagnostic Inspector -->
+        <section class="home-inspection-section">
             <div class="container">
-                <div class="cta-grid"
-                    style="background: var(--primary); border-radius: var(--radius-lg); padding: 60px; color: white; display: grid; gap: 40px; align-items: center;">
-                    <div data-reveal>
-                        <h2 style="color: white; font-size: 2.5rem; margin-bottom: 20px;">Check Your Accessibility Score
-                        </h2>
-                        <p style="margin-bottom: 30px; opacity: 0.9;">Enter your URL below to get a quick overview of
-                            your website's accessibility compliance status.</p>
-                        <form style="display: flex; gap: 10px;">
-                            <input type="url" placeholder="https://yourwebsite.com"
-                                style="flex-grow: 1; padding: 15px; border-radius: var(--radius-sm); color: var(--black);"
-                                required id="score-url">
-                            <button type="submit" class="btn" id="analyze-btn"
-                                style="background: var(--black); color: var(--white);">Analyze <i
-                                    class="fas fa-microscope"></i></button>
+                <div class="inspection-card" data-reveal>
+                    <div class="inspection-lead">
+                        <span class="inspection-tag">REAL-TIME DIAGNOSTIC TRIAGE</span>
+                        <h2 class="inspection-title">Inspect Your Digital Product for Accessibility Barriers</h2>
+                        <p class="inspection-desc">
+                            Simulate assistive screen reader compliance, keyboard focus traps, and WCAG 2.2 AA contrast rules on your key user flows before formal audit scoping.
+                        </p>
+                        <form class="inspection-form" id="inspection-form" onsubmit="event.preventDefault(); runDiagnosticTriage();">
+                            <div class="inspection-input-wrap">
+                                <i class="fas fa-lock"></i>
+                                <input type="url" class="inspection-input" id="diagnostic-url" placeholder="https://app.yourdomain.com" required aria-label="Enter website URL for preliminary inspection">
+                            </div>
+                            <button type="submit" class="btn btn-primary" id="run-diagnostic-btn" style="white-space: nowrap; padding: 14px 28px;">
+                                <span>Run Live Inspection</span>
+                                <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
+                            </button>
                         </form>
-                    </div>
-                    <div data-reveal
-                        style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: var(--radius-md); text-align: center;">
-                        <div style="font-size: 4rem; font-weight: 800; margin-bottom: 10px;">--</div>
-                        <p style="text-transform: uppercase; letter-spacing: 2px;">Predicted Score</p>
-                        <div
-                            style="width: 100%; height: 10px; background: rgba(255,255,255,0.2); border-radius: 5px; margin: 20px 0;">
-                            <div style="width: 30%; height: 100%; background: #fff; border-radius: 5px;"></div>
+                        <div class="inspection-badges">
+                            <span class="inspection-badge-item"><i class="fas fa-check-circle"></i> Non-Intrusive Scan</span>
+                            <span class="inspection-badge-item"><i class="fas fa-check-circle"></i> Zero Script Injection</span>
+                            <span class="inspection-badge-item"><i class="fas fa-check-circle"></i> WCAG 2.2 AA Criteria</span>
                         </div>
-                        <p style="font-size: 14px; opacity: 0.8;">Run a full audit to see detailed metrics</p>
+                    </div>
+                    <div class="telemetry-box" id="telemetry-preview">
+                        <div class="telemetry-header">
+                            <span class="telemetry-title">Preliminary Benchmark</span>
+                            <span class="telemetry-live" id="telemetry-status-text">Engine Ready</span>
+                        </div>
+                        <div class="telemetry-score-row">
+                            <div class="telemetry-score-big" id="telemetry-score-num">94</div>
+                            <div>
+                                <div class="telemetry-score-label">Predicted Conformance</div>
+                                <span style="font-size: 12px; color: var(--text-muted);">Standard AA Baseline</span>
+                            </div>
+                        </div>
+                        <div class="telemetry-bars">
+                            <div class="telemetry-bar-item">
+                                <div class="telemetry-bar-info">
+                                    <span>Perceivable (Contrast & Media)</span>
+                                    <span id="score-perceivable">98%</span>
+                                </div>
+                                <div class="telemetry-bar-track">
+                                    <div class="telemetry-bar-fill" id="bar-perceivable" style="width: 98%;"></div>
+                                </div>
+                            </div>
+                            <div class="telemetry-bar-item">
+                                <div class="telemetry-bar-info">
+                                    <span>Operable (Keyboard & Focus Traps)</span>
+                                    <span id="score-operable">92%</span>
+                                </div>
+                                <div class="telemetry-bar-track">
+                                    <div class="telemetry-bar-fill" id="bar-operable" style="width: 92%;"></div>
+                                </div>
+                            </div>
+                            <div class="telemetry-bar-item">
+                                <div class="telemetry-bar-info">
+                                    <span>Understandable (ARIA & Semantics)</span>
+                                    <span id="score-understandable">95%</span>
+                                </div>
+                                <div class="telemetry-bar-track">
+                                    <div class="telemetry-bar-fill" id="bar-understandable" style="width: 95%;"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

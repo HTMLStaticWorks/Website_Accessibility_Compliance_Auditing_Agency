@@ -32,12 +32,12 @@
                             style="padding: 8px 15px; width: 100%; text-align: center;">Login</a>
                     </li>
                     <li class="mobile-toggle-wrapper">
-                        <button class="theme-toggle" title="Toggle Theme">🌙</button>
+                        <button class="theme-toggle" aria-label="Toggle theme" title="Toggle Theme"><i class="fas fa-moon"></i></button>
                         <button class="rtl-toggle" title="Toggle RTL/LTR">RTL</button>
                     </li>
                 </ul>
                 <div class="nav-actions">
-                    <button class="theme-toggle" title="Toggle Theme">🌙</button>
+                    <button class="theme-toggle" aria-label="Toggle theme" title="Toggle Theme"><i class="fas fa-moon"></i></button>
                     <button class="rtl-toggle" title="Toggle RTL/LTR">RTL</button>
                     <a href="login.html" class="btn btn-outline" style="padding: 8px 15px;">Login</a>
                     <div class="hamburger"><span></span><span></span><span></span></div>
@@ -48,18 +48,157 @@
 
     <main id="main-content">
         <!-- Section 1: Contact Hero -->
-        <section class="section"
-            style="padding: 220px 0 140px; background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('assets/images/contact-hero.png') center/cover no-repeat; color: white; text-align: center;">
+        <section class="section page-hero"
+            style="min-height: 480px; padding: 180px 0 100px; display: flex; align-items: center; justify-content: center; box-sizing: border-box; background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('assets/images/contact-hero.png') center/cover no-repeat; color: white; text-align: center;">
             <div class="container" data-reveal>
-                <span class="section-subtitle" style="color: #DCE4D5;">AUDIT INQUIRY</span>
-                <h1 class="section-title hero-title" style="color: white; font-size: 3.8rem; margin-bottom: 25px;">Initiate Your Accessibility Evaluation</h1>
+                <span class="section-subtitle" style="color: #DCE4D5;">AUDIT INQUIRY & CONTACT</span>
+                <h1 class="section-title hero-title" style="color: white; font-size: 3.8rem; margin-bottom: 25px;">Connect with Our Accessibility Practice</h1>
                 <p style="max-width: 800px; margin: 0 auto; color: #cbd5e1; font-size: 1.2rem; line-height: 1.6;">
-                    Have questions regarding WCAG 2.1 AA criteria, Section 508, or audit scheduling? Contact our technical team.
+                    Request an expert manual WCAG 2.2 AA audit scope or send a direct technical inquiry to our evaluation team.
                 </p>
+                <div style="display: flex; gap: 15px; justify-content: center; margin-top: 35px; flex-wrap: wrap;">
+                    <a href="#request-audit" class="btn btn-primary" style="padding: 14px 32px;">Request an Audit <i class="fas fa-file-contract" style="margin-left: 6px;"></i></a>
+                    <a href="#contact-form" class="btn btn-outline-white" style="padding: 14px 32px;">General Inquiry <i class="fas fa-envelope" style="margin-left: 6px;"></i></a>
+                </div>
             </div>
         </section>
 
-        <!-- Section 2: Contact Information (4 cards) -->
+        <!-- Section 2: Dedicated Request an Audit Section -->
+        <section class="audit-request-section" id="request-audit">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 50px;" data-reveal>
+                    <span class="section-subtitle">FORMAL EVALUATION INTAKE</span>
+                    <h2 class="section-title">Request an Accessibility Audit</h2>
+                    <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">
+                        Provide your platform details and compliance targets below. Our certified technical specialists will deliver a structured Statement of Work (SOW) within 24 hours.
+                    </p>
+                </div>
+
+                <div class="audit-scoping-grid">
+                    <!-- Left Sidebar: Scoping Guidelines & Commitments -->
+                    <div class="audit-scoping-sidebar" data-reveal="left">
+                        <h3 style="font-size: 1.35rem; color: var(--text-heading); margin-bottom: 5px;">Audit Scope Standards</h3>
+                        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 10px;">
+                            Every assessment is conducted under strict technical standards designed for engineering precision and legal defensibility.
+                        </p>
+
+                        <ul class="scoping-commitment-list">
+                            <li class="scoping-commitment-item">
+                                <div class="scoping-commitment-icon">
+                                    <i class="fas fa-user-check"></i>
+                                </div>
+                                <div>
+                                    <div class="scoping-commitment-title">100% Manual Human Verification</div>
+                                    <p class="scoping-commitment-desc">Certified IAAP specialists test full user workflows with NVDA, VoiceOver, JAWS, and keyboard navigation.</p>
+                                </div>
+                            </li>
+                            <li class="scoping-commitment-item">
+                                <div class="scoping-commitment-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div>
+                                    <div class="scoping-commitment-title">Developer Code Remediation</div>
+                                    <p class="scoping-commitment-desc">Every issue includes DOM element locators, WCAG success criteria references, and framework-specific code snippets.</p>
+                                </div>
+                            </li>
+                            <li class="scoping-commitment-item">
+                                <div class="scoping-commitment-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div>
+                                    <div class="scoping-commitment-title">NDA & Staging Confidentiality</div>
+                                    <p class="scoping-commitment-desc">Full confidentiality agreements for pre-production codebases, staging environments, and proprietary designs.</p>
+                                </div>
+                            </li>
+                            <li class="scoping-commitment-item">
+                                <div class="scoping-commitment-icon">
+                                    <i class="fas fa-file-signature"></i>
+                                </div>
+                                <div>
+                                    <div class="scoping-commitment-title">VPAT / ACR Conformance Ready</div>
+                                    <p class="scoping-commitment-desc">Documentation structured to satisfy DOJ settlement terms, Section 508 procurement, and EAA mandates.</p>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="audit-sla-banner">
+                            <h4>24-Hour Scope Response</h4>
+                            <p>Urgent demand letter or legal filing deadline? Mention in your notes or call +1 (555) 123-4567.</p>
+                        </div>
+                    </div>
+
+                    <!-- Right Card: Dedicated Audit Scope Request Form -->
+                    <div class="audit-request-card" data-reveal="right">
+                        <form id="audit-scope-form" onsubmit="event.preventDefault(); showToast('Audit scope request submitted! Our team will contact you within 24 hours.', 'success');">
+                            <div class="form-grid-2">
+                                <div class="form-group">
+                                    <label for="audit-first-name" class="form-label">First Name <span class="required">*</span></label>
+                                    <input type="text" class="form-control" id="audit-first-name" placeholder="e.g. Jane" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="audit-last-name" class="form-label">Last Name <span class="required">*</span></label>
+                                    <input type="text" class="form-control" id="audit-last-name" placeholder="e.g. Doe" required>
+                                </div>
+                            </div>
+
+                            <div class="form-grid-2">
+                                <div class="form-group">
+                                    <label for="audit-email" class="form-label">Work Email Address <span class="required">*</span></label>
+                                    <input type="email" class="form-control" id="audit-email" placeholder="jane@company.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="audit-company" class="form-label">Company / Organization <span class="required">*</span></label>
+                                    <input type="text" class="form-control" id="audit-company" placeholder="e.g. Acme Corporation" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="audit-url" class="form-label">Target Website or Application URL <span class="required">*</span></label>
+                                <input type="url" class="form-control" id="audit-url" placeholder="https://app.yourcompany.com" required>
+                            </div>
+
+                            <div class="form-grid-2">
+                                <div class="form-group">
+                                    <label for="audit-standard" class="form-label">Target Compliance Standard <span class="required">*</span></label>
+                                    <select class="form-control" id="audit-standard" required>
+                                        <option value="">Select Compliance Goal</option>
+                                        <option value="wcag22-aa">WCAG 2.2 Level AA (Recommended Standard)</option>
+                                        <option value="wcag21-aa">WCAG 2.1 Level AA (Legacy Standard)</option>
+                                        <option value="ada-defense">ADA Title III Legal Defense / Demand Letter</option>
+                                        <option value="section-508">Section 508 / VPAT Evaluation</option>
+                                        <option value="eaa-2025">European Accessibility Act (EAA 2025)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="audit-asset-type" class="form-label">Platform / Asset Type <span class="required">*</span></label>
+                                    <select class="form-control" id="audit-asset-type" required>
+                                        <option value="">Select Platform Type</option>
+                                        <option value="web-app">Web Application (SaaS / Portal)</option>
+                                        <option value="ecommerce">E-Commerce Storefront</option>
+                                        <option value="marketing">Corporate / Marketing Website</option>
+                                        <option value="mobile-app">Native iOS / Android Mobile App</option>
+                                        <option value="documents">PDF / Digital Document Archive</option>
+                                        <option value="design-system">Figma Design System / UI Tokens</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="audit-requirements" class="form-label">Key User Flows & Technical Scope Notes <span class="required">*</span></label>
+                                <textarea class="form-control" id="audit-requirements" placeholder="Describe critical journeys to evaluate (e.g., login, onboarding, multi-step checkout, dashboard widgets, staging access, or specific timeline targets)..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 16px;">
+                                <span>Submit Audit Scope Request</span>
+                                <i class="fas fa-file-contract" style="margin-left: 8px;"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Direct Contact Information Cards -->
         <section class="section">
             <div class="container">
                 <div class="grid grid-4">
@@ -99,63 +238,53 @@
             </div>
         </section>
 
-        <!-- Section 3: Contact Form -->
-        <section class="section" style="background: #f8fafc;">
+        <!-- Section 4: Separated General Contact Form -->
+        <section class="general-contact-section" id="contact-form">
             <div class="container">
-                <div class="grid grid-2"
-                    style="background: white; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lg);">
-                    <div data-reveal style="padding: 60px; background: var(--primary); color: white;">
-                        <h2 style="color: white; margin-bottom: 30px;">Request an Audit Scope</h2>
-                        <p style="margin-bottom: 40px; opacity: 0.9;">Provide your application details and our technical team will deliver a structured evaluation proposal within 24 hours.</p>
-                        <ul style="display: grid; gap: 20px; margin-bottom: 40px;">
-                            <li style="display: flex; gap: 15px;"><i class="fas fa-check-circle"></i> ISO/IEC 40500 & WCAG 2.1 AA standards</li>
-                            <li style="display: flex; gap: 15px;"><i class="fas fa-check-circle"></i> NDA & security confidentiality guaranteed</li>
-                            <li style="display: flex; gap: 15px;"><i class="fas fa-check-circle"></i> Engineering remediation support included</li>
-                        </ul>
-                        <div style="padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.2);">
-                            <h3
-                                style="color: white; margin-bottom: 20px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">
-                                Follow WACAAegis</h3>
-                            <div class="social-links">
-                                <a href="#" class="social-link" style="background: rgba(255,255,255,0.1);"><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="social-link" style="background: rgba(255,255,255,0.1);"><i
-                                        class="fab fa-instagram"></i></a>
-                                <a href="#" class="social-link" style="background: rgba(255,255,255,0.1);"><i
-                                        class="fab fa-linkedin-in"></i></a>
-                                <a href="#" class="social-link" style="background: rgba(255,255,255,0.1);"><i
-                                        class="fab fa-youtube"></i></a>
+                <div class="text-center" style="margin-bottom: 50px;" data-reveal>
+                    <span class="section-subtitle">DIRECT INQUIRIES</span>
+                    <h2 class="section-title">Send Us a Direct Message</h2>
+                    <p style="color: var(--text-muted); max-width: 650px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">
+                        Have a general question, need consulting advice, or want to discuss accessibility workshops for your team? Send us a message below.
+                    </p>
+                </div>
+
+                <div class="general-contact-card" data-reveal>
+                    <form id="general-inquiry-form" onsubmit="event.preventDefault(); showToast('Thank you! Your message has been sent successfully.', 'success');">
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="contact-full-name" class="form-label">Your Name <span class="required">*</span></label>
+                                <input type="text" class="form-control" id="contact-full-name" placeholder="e.g. Alex Morgan" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email-address" class="form-label">Email Address <span class="required">*</span></label>
+                                <input type="email" class="form-control" id="contact-email-address" placeholder="alex@example.com" required>
                             </div>
                         </div>
-                    </div>
-                    <div class="contact-form-container" data-reveal>
-                        <form style="display: flex; flex-direction: column; gap: 20px;">
-                            <input type="text" placeholder="First Name"
-                                style="padding: 15px; border-radius: 10px; border: 1px solid #e2e8f0;" required
-                                id="first-name">
-                            <input type="text" placeholder="Last Name"
-                                style="padding: 15px; border-radius: 10px; border: 1px solid #e2e8f0;" required
-                                id="last-name">
-                            <input type="email" placeholder="Email Address"
-                                style="padding: 15px; border-radius: 10px; border: 1px solid #e2e8f0;" required
-                                id="contact-email">
-                            <input type="url" placeholder="Website URL (Optional)"
-                                style="padding: 15px; border-radius: 10px; border: 1px solid #e2e8f0;" id="contact-url">
-                            <select style="padding: 15px; border-radius: 10px; border: 1px solid #e2e8f0;" required
-                                id="service-type">
-                                <option value="">Select Service</option>
-                                <option value="audit">Full Accessibility Audit</option>
-                                <option value="consulting">Inclusive UX Consulting</option>
-                                <option value="remediation">Remediation Support</option>
-                                <option value="vpat">VPAT Generation</option>
-                            </select>
-                            <textarea placeholder="Tell us about your application and technical requirements"
-                                style="padding: 15px; border-radius: 10px; border: 1px solid #e2e8f0; height: 120px;"
-                                required id="contact-msg"></textarea>
-                            <button type="submit" class="btn btn-primary" style="padding: 15px;">Send Inquiry <i
-                                    class="fas fa-paper-plane"></i></button>
-                        </form>
-                    </div>
+
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="contact-phone-number" class="form-label">Phone Number (Optional)</label>
+                                <input type="tel" class="form-control" id="contact-phone-number" placeholder="+1 (555) 000-0000">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-subject-field" class="form-label">Subject <span class="required">*</span></label>
+                                <input type="text" class="form-control" id="contact-subject-field" placeholder="e.g. Consulting Inquiry / Engineering Workshop" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-message-body" class="form-label">Your Message <span class="required">*</span></label>
+                            <textarea class="form-control" id="contact-message-body" placeholder="How can our accessibility specialists assist you?" required></textarea>
+                        </div>
+
+                        <div style="text-align: right;">
+                            <button type="submit" class="btn btn-primary" style="padding: 14px 36px;">
+                                <span>Send Message</span>
+                                <i class="fas fa-paper-plane" style="margin-left: 8px;"></i>
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>

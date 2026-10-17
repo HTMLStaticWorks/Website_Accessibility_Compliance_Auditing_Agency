@@ -32,12 +32,12 @@
                             style="padding: 8px 15px; width: 100%; text-align: center;">Login</a>
                     </li>
                     <li class="mobile-toggle-wrapper">
-                        <button class="theme-toggle" title="Toggle Theme">🌙</button>
+                        <button class="theme-toggle" aria-label="Toggle theme" title="Toggle Theme"><i class="fas fa-moon"></i></button>
                         <button class="rtl-toggle" title="Toggle RTL/LTR">RTL</button>
                     </li>
                 </ul>
                 <div class="nav-actions">
-                    <button class="theme-toggle" title="Toggle Theme">🌙</button>
+                    <button class="theme-toggle" aria-label="Toggle theme" title="Toggle Theme"><i class="fas fa-moon"></i></button>
                     <button class="rtl-toggle" title="Toggle RTL/LTR">RTL</button>
                     <a href="login.html" class="btn btn-outline" style="padding: 8px 15px;">Login</a>
                     <div class="hamburger"><span></span><span></span><span></span></div>
@@ -48,8 +48,8 @@
 
     <main id="main-content">
         <!-- Section 1: Services Hero -->
-        <section class="section"
-            style="padding: 220px 0 140px; background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('assets/images/services-hero.png') center/cover no-repeat; color: white; text-align: center;">
+        <section class="section page-hero"
+            style="min-height: 480px; padding: 180px 0 100px; display: flex; align-items: center; justify-content: center; box-sizing: border-box; background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('assets/images/services-hero.png') center/cover no-repeat; color: white; text-align: center;">
             <div class="container" data-reveal>
                 <span class="section-subtitle" style="color: #DCE4D5;">TECHNICAL AUDIT SERVICES</span>
                 <h1 class="section-title hero-title" style="color: white; font-size: 3.8rem; margin-bottom: 25px;">What
@@ -236,16 +236,54 @@
             </div>
         </section>
 
-        <!-- Section 5: Accessibility Roadmap CTA -->
-        <section class="section" style="background: #0f172a; color: white;">
-            <div class="container text-center">
-                <div data-reveal>
-                    <h2 class="section-title" style="color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; background: none !important;">Need Guidance on Audit
-                        Scope?</h2>
-                    <p style="margin: 20px 0 40px; color: #e2e8f0;">Schedule a technical consultation to establish your
-                        compliance scope and evaluation timeline.</p>
-                    <a href="contact.html" class="btn btn-primary"
-                        style="padding: 15px 50px; font-size: 1.1rem; background-color: var(--primary); color: #ffffff;">Request Technical Review</a>
+        <!-- Section 5: Service Level Specifications & Turnaround Matrix -->
+        <section class="services-delivery-section">
+            <div class="container">
+                <div class="delivery-header" data-reveal>
+                    <div class="delivery-header-left">
+                        <span class="delivery-tag">SERVICE DELIVERY SPECIFICATIONS</span>
+                        <h2 class="delivery-title">Predictable Milestones & Turnaround SLAs</h2>
+                    </div>
+                    <div class="delivery-header-right">
+                        <a href="pricing.html" class="btn btn-outline" style="padding: 10px 24px; font-size: 14px;">
+                            <span>Compare Scope Tiers</span>
+                            <i class="fas fa-arrow-right" style="margin-left: 6px; font-size: 12px;"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="delivery-matrix" data-reveal>
+                    <div class="delivery-cell">
+                        <span class="delivery-phase-badge">Phase 01</span>
+                        <div>
+                            <div class="delivery-val">48h</div>
+                            <div class="delivery-label">Diagnostic Scope</div>
+                            <p class="delivery-desc">Rapid component discovery, automated baseline crawl, and custom user-flow boundary definition.</p>
+                        </div>
+                    </div>
+                    <div class="delivery-cell">
+                        <span class="delivery-phase-badge">Phase 02</span>
+                        <div>
+                            <div class="delivery-val">100%</div>
+                            <div class="delivery-label">Screen Reader Tested</div>
+                            <p class="delivery-desc">Deep dual-auditor evaluation across NVDA, VoiceOver, JAWS, and high-contrast system modes.</p>
+                        </div>
+                    </div>
+                    <div class="delivery-cell">
+                        <span class="delivery-phase-badge">Phase 03</span>
+                        <div>
+                            <div class="delivery-val">DOM</div>
+                            <div class="delivery-label">Engineered Fixes</div>
+                            <p class="delivery-desc">Concrete source-code recommendations with exact ARIA attribute and semantic HTML corrections.</p>
+                        </div>
+                    </div>
+                    <div class="delivery-cell">
+                        <span class="delivery-phase-badge">Phase 04</span>
+                        <div>
+                            <div class="delivery-val">1 Cycle</div>
+                            <div class="delivery-label">Free Verification</div>
+                            <p class="delivery-desc">Post-remediation re-audit included in every tier with formal VPAT / ACR conformance sign-off.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

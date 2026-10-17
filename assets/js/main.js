@@ -26,7 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const updateThemeButtons = (isDark) => {
         themeToggles.forEach(toggle => {
-            toggle.innerHTML = isDark ? '☀️' : '🌙';
+            toggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            toggle.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+            toggle.setAttribute('title', isDark ? 'Switch to light theme' : 'Switch to dark theme');
         });
     };
 
@@ -158,4 +160,38 @@ function createToastContainer() {
     container.className = 'toast-container';
     document.body.appendChild(container);
     return container;
+}
+
+// Live WCAG Diagnostic Inspection Simulation
+function runDiagnosticTriage() {
+    const input = document.getElementById('diagnostic-url');
+    const scoreNum = document.getElementById('telemetry-score-num');
+    const statusText = document.getElementById('telemetry-status-text');
+    if (!input || !input.value) return;
+
+    if (statusText) statusText.textContent = 'Analyzing DOM...';
+    if (scoreNum) scoreNum.textContent = '...';
+    if (typeof showToast === 'function') {
+        showToast('Initiating non-intrusive compliance check on ' + input.value, 'info');
+    }
+
+    setTimeout(() => {
+        if (statusText) statusText.textContent = 'Engine Active';
+        if (scoreNum) scoreNum.textContent = '96';
+        const barP = document.getElementById('bar-perceivable');
+        const barO = document.getElementById('bar-operable');
+        const barU = document.getElementById('bar-understandable');
+        if (barP) barP.style.width = '100%';
+        if (barO) barO.style.width = '94%';
+        if (barU) barU.style.width = '96%';
+        const scoreP = document.getElementById('score-perceivable');
+        const scoreO = document.getElementById('score-operable');
+        const scoreU = document.getElementById('score-understandable');
+        if (scoreP) scoreP.textContent = '100%';
+        if (scoreO) scoreO.textContent = '94%';
+        if (scoreU) scoreU.textContent = '96%';
+        if (typeof showToast === 'function') {
+            showToast('Inspection complete! Ready for full human verification scope.', 'success');
+        }
+    }, 900);
 }

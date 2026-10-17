@@ -50,3 +50,42 @@ body.rtl .skip-link {
     left: auto;
     right: 0;
 }
+
+body.rtl .charter-action-link i {
+    transform: rotate(180deg);
+}
+
+body.rtl .charter-action-link:hover {
+    transform: translateX(-4px);
+}
+
+body.rtl .delivery-cell {
+    border-right: none;
+    border-left: 1px solid var(--border-color);
+}
+
+body.rtl .delivery-cell:last-child {
+    border-left: none;
+}
+
+@media (max-width: 1024px) {
+    body.rtl .delivery-cell:nth-child(2) {
+        border-left: none;
+    }
+}
+
+body.rtl .inspection-input-wrap i {
+    left: auto;
+    right: 18px;
+}
+
+body.rtl .inspection-input {
+    padding: 14px 44px 14px 18px;
+}
+
+body.rtl .inspection-form button i,
+body.rtl .gov-channel-card a i {
+    transform: rotate(180deg);
+    margin-left: 0;
+    margin-right: 8px;
+}
