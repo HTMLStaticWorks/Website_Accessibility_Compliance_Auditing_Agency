@@ -10,6 +10,27 @@
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .delivery-cell {
+            justify-content: flex-start !important;
+        }
+
+        .delivery-body {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .delivery-val {
+            min-height: 42px;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .delivery-label {
+            min-height: 22px;
+        }
+    </style>
 </head>
 
 <body>
@@ -252,33 +273,33 @@
                     </div>
                 </div>
                 <div class="delivery-matrix" data-reveal>
-                    <div class="delivery-cell">
+                    <div class="delivery-cell" style="justify-content: flex-start;">
                         <span class="delivery-phase-badge">Phase 01</span>
-                        <div>
+                        <div class="delivery-body">
                             <div class="delivery-val">48h</div>
                             <div class="delivery-label">Diagnostic Scope</div>
                             <p class="delivery-desc">Rapid component discovery, automated baseline crawl, and custom user-flow boundary definition.</p>
                         </div>
                     </div>
-                    <div class="delivery-cell">
+                    <div class="delivery-cell" style="justify-content: flex-start;">
                         <span class="delivery-phase-badge">Phase 02</span>
-                        <div>
+                        <div class="delivery-body">
                             <div class="delivery-val">100%</div>
                             <div class="delivery-label">Screen Reader Tested</div>
                             <p class="delivery-desc">Deep dual-auditor evaluation across NVDA, VoiceOver, JAWS, and high-contrast system modes.</p>
                         </div>
                     </div>
-                    <div class="delivery-cell">
+                    <div class="delivery-cell" style="justify-content: flex-start;">
                         <span class="delivery-phase-badge">Phase 03</span>
-                        <div>
+                        <div class="delivery-body">
                             <div class="delivery-val">DOM</div>
                             <div class="delivery-label">Engineered Fixes</div>
                             <p class="delivery-desc">Concrete source-code recommendations with exact ARIA attribute and semantic HTML corrections.</p>
                         </div>
                     </div>
-                    <div class="delivery-cell">
+                    <div class="delivery-cell" style="justify-content: flex-start;">
                         <span class="delivery-phase-badge">Phase 04</span>
-                        <div>
+                        <div class="delivery-body">
                             <div class="delivery-val">1 Cycle</div>
                             <div class="delivery-label">Free Verification</div>
                             <p class="delivery-desc">Post-remediation re-audit included in every tier with formal VPAT / ACR conformance sign-off.</p>

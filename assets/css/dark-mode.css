@@ -130,6 +130,15 @@ body.dark-mode .btn-outline-white:hover {
     color: #000000 !important;
 }
 
+body.dark-mode .btn-outline:hover *,
+body.dark-mode .btn-outline:hover span,
+body.dark-mode .btn-outline:hover i,
+body.dark-mode .btn-outline-white:hover *,
+body.dark-mode .btn-outline-white:hover span,
+body.dark-mode .btn-outline-white:hover i {
+    color: #000000 !important;
+}
+
 /* Remediation feature icons high-contrast overrides for dark mode */
 body.dark-mode .remediation-icon-box.icon-box-green,
 body.dark-mode .remediation-icon-box.icon-box-green i {
@@ -462,6 +471,13 @@ body.dark-mode .gov-channel-card {
 
 body.dark-mode .gov-channel-card:hover {
     border-color: var(--primary) !important;
+}
+
+body.dark-mode .home2-governance-section .btn-outline:hover,
+body.dark-mode .home2-governance-section .btn-outline:hover span,
+body.dark-mode .home2-governance-section .btn-outline:hover i {
+    background: #ffffff !important;
+    color: #000000 !important;
 }
 
 body.dark-mode .gov-channel-badge {
